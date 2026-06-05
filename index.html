@@ -38,7 +38,8 @@ body:has(button:hover) .custom-cursor,
 body:has(.pill:hover) .custom-cursor{
   width:48px;height:48px;border-color:var(--black);
 }
-@media(max-width:900px){.custom-cursor,.cursor-dot{display:none;}body{cursor:auto;}}
+* {cursor:none !important;}
+@media(max-width:900px){.custom-cursor,.cursor-dot{display:none;}body *{cursor:auto !important;}}
 
 /* TOP BAR */
 .top-bar{background:var(--black);padding:10px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -359,7 +360,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     <div>
       <div class="btns">
         <a href="mailto:mozaqqa@gmail.com" class="btn-main" data-i18n="btn-cart">In den Warenkorb →</a>
-        <a href="https://linkedin.com" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
+        <a href="https://www.linkedin.com/in/mona-zaqqa/" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
       </div>
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust1">Vollständige Unterlagen</span></div>
@@ -616,7 +617,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   <p class="k-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
   <div class="k-btns">
     <a href="mailto:mozaqqa@gmail.com" class="kbm" data-i18n="contact-email">E-Mail schreiben</a>
-    <a href="https://linkedin.com" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
+    <a href="https://www.linkedin.com/in/mona-zaqqa/" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
   </div>
   <div class="k-details">
     <a href="mailto:mozaqqa@gmail.com">mozaqqa@gmail.com</a>
