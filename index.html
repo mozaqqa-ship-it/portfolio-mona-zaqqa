@@ -70,8 +70,7 @@ nav{
   padding:10px 48px;font-size:11px;letter-spacing:0.06em;
   color:var(--subtle);border-bottom:1px solid var(--border);
 }
-.breadcrumb a{color:var(--subtle);}
-.breadcrumb a:hover{color:var(--black);}
+.breadcrumb span{color:var(--subtle);}
 
 /* HERO */
 .hero{display:grid;grid-template-columns:48% 1fr;min-height:92vh;border-bottom:1.5px solid var(--black);}
@@ -332,6 +331,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .tl-item{grid-template-columns:1fr;gap:8px;}
   .c-big{font-size:26px;}
   .c-stat{font-size:28px;}
+  .mobile-hide{display:none;}
   .eyebrow{display:none;}
   .hero-right::before{display:none;}
   .kontakt-sec{padding:56px 24px;}
@@ -343,8 +343,8 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <div class="top-bar">
   <div class="top-bar-left">
-    <span>Content Manager · E-Commerce</span><span class="sep">·</span>
-    <span>Köln / Remote</span>
+    <span>Content Manager · E-Commerce</span><span class="sep mobile-hide">·</span>
+    <span class="mobile-hide">Köln / Remote</span>
   </div>
   <div class="top-bar-right">DE · EN · AR</div>
 </div>
@@ -352,15 +352,15 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 <nav>
   <div class="nav-logo">Mona Zaqqa</div>
   <ul class="nav-links">
-    <li><a href="#" onclick="switchTab('desc');scrollToSection('tabs-anchor');return false;">Profil</a></li>
-    <li><a href="#" onclick="switchTab('specs');scrollToSection('tabs-anchor');return false;">Skills</a></li>
-    <li><a href="#" onclick="switchTab('reviews');scrollToSection('tabs-anchor');return false;">Zeugnisse</a></li>
+    <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');">Profil</a></li>
+    <li><a href="javascript:void(0)" onclick="switchTab('specs');scrollToSection('tabs-anchor');">Skills</a></li>
+    <li><a href="javascript:void(0)" onclick="switchTab('reviews');scrollToSection('tabs-anchor');">Zeugnisse</a></li>
   </ul>
   <a href="#kontakt" class="nav-cta">Kontakt →</a>
 </nav>
 
 <div class="breadcrumb">
-  <a href="#">Talent Pool</a> / <a href="#">Content & Marketing</a> / <a href="#">E-Commerce</a> / Mona Zaqqa
+  <span>Talent Pool</span> / <span>Content & Marketing</span> / <span>E-Commerce</span> / Mona Zaqqa
 </div>
 
 <!-- HERO -->
