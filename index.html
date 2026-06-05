@@ -3,981 +3,1010 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mona Zaqqa – Content Manager (E-Commerce)</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Mona Zaqqa — Content Manager (E-Commerce)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --black: #0e0e0e;
-    --white: #f5f2ed;
-    --cream: #ede9e1;
-    --ink: #1a1a1a;
-    --muted: #6b6560;
-    --accent: #c8441a;
-    --accent-light: #f0e8e3;
-    --border: #d4cfc7;
-    --green: #2d5a27;
-    --green-light: #e8f0e6;
-    --gold: #8a6d2f;
-    --gold-light: #f5f0e3;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #111010;
+  --white: #f5f1ea;
+  --cream: #ede8df;
+  --cream2: #e0d9ce;
+  --yellow: #e8d84a;
+  --pink: #f2a7c3;
+  --blue: #a8c4e0;
+  --red: #d63a1f;
+  --green: #4a7c59;
+  --ink: #1a1917;
+  --muted: #7a7570;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* MARQUEE */
+.marquee-bar {
+  background: var(--black);
+  color: var(--yellow);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-inner { display: inline-block; animation: marquee 24s linear infinite; }
+.marquee-inner span { margin: 0 40px; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.6;
-  }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  border-bottom: 1.5px solid var(--black);
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav-links a:hover { border-bottom-color: var(--black); }
+.nav-cart {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--black);
+  color: var(--yellow);
+  padding: 9px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  transition: background 0.2s;
+}
+.nav-cart:hover { background: var(--red); }
 
-  /* ── BREADCRUMB ── */
-  .breadcrumb {
-    background: var(--cream);
-    border-bottom: 1px solid var(--border);
-    padding: 10px 40px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.03em;
-  }
-  .breadcrumb span { color: var(--accent); }
+/* BREADCRUMB */
+.breadcrumb {
+  padding: 10px 40px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 0.5px solid var(--cream2);
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--black); }
 
-  /* ── MAIN LAYOUT ── */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+  border-bottom: 1.5px solid var(--black);
+}
 
-  /* ── HERO SECTION ── */
-  .hero {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 60px;
-    padding: 48px 0 40px;
-    border-bottom: 1px solid var(--border);
-  }
+/* LEFT */
+.hero-left {
+  position: relative;
+  background: var(--cream);
+  border-right: 1.5px solid var(--black);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.hero-img-area {
+  flex: 1;
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background: #c8bfb0;
+}
+.hero-img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
 
-  .product-image-wrap {
-    position: relative;
-  }
+/* Collage deco */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+.deco-rect {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
 
-  .product-image {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: var(--cream);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
+.sticker-new {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 10;
+  width: 82px;
+  height: 82px;
+  background: var(--yellow);
+  border: 2.5px solid var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  transform: rotate(12deg);
+  animation: wobble 3s ease-in-out infinite;
+  cursor: default;
+}
+@keyframes wobble {
+  0%,100% { transform: rotate(12deg); }
+  50% { transform: rotate(7deg) scale(1.05); }
+}
 
-  .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-  }
+.sticker-stars {
+  position: absolute;
+  bottom: 28px;
+  left: 22px;
+  z-index: 10;
+  background: var(--pink);
+  border: 2px solid var(--black);
+  padding: 8px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  transform: rotate(-3deg);
+  white-space: nowrap;
+}
 
-  .badge-new {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: var(--accent);
-    color: white;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-  }
+.thumb-strip { display: flex; border-top: 1.5px solid var(--black); }
+.thumb-item {
+  flex: 1;
+  padding: 13px 6px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-right: 0.5px solid var(--black);
+  cursor: pointer;
+  transition: background 0.15s;
+  color: var(--muted);
+}
+.thumb-item:last-child { border-right: none; }
+.thumb-item:hover, .thumb-item.active { background: var(--black); color: var(--yellow); }
 
-  .image-thumbnails {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-  }
+/* RIGHT */
+.hero-right {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.hero-right::before {
+  content: 'N°001';
+  position: absolute;
+  top: 40px;
+  right: 44px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
 
-  .thumb {
-    flex: 1;
-    aspect-ratio: 1;
-    border: 1px solid var(--border);
-    background: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: border-color 0.2s;
-    text-align: center;
-    padding: 4px;
-    line-height: 1.3;
-  }
-  .thumb:hover { border-color: var(--accent); color: var(--accent); }
-  .thumb.active { border-color: var(--ink); }
+.cat-tag {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); display: inline-block; }
 
-  /* ── PRODUCT INFO ── */
-  .product-info {
-    padding-top: 8px;
-  }
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(50px, 6.5vw, 80px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+.product-name em { font-style: italic; font-weight: 400; color: var(--red); }
 
-  .category-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
 
-  .product-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 6px;
-    color: var(--ink);
-  }
+.rating-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.stars-wrap { display: flex; gap: 3px; }
+.star-s {
+  width: 13px; height: 13px;
+  background: var(--black);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.review-link { font-size: 10px; letter-spacing: 0.06em; text-decoration: underline; color: var(--red); cursor: pointer; }
 
-  .product-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
+.sku-row { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 26px; }
 
-  .stars {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+.section-divider { height: 1px; background: var(--black); margin: 18px 0; opacity: 0.15; }
 
-  .star-icons {
-    display: flex;
-    gap: 2px;
-  }
+.avail-row { display: flex; align-items: center; gap: 8px; margin-bottom: 22px; }
+.avail-pulse {
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(1.3);} }
+.avail-label { font-size: 11px; letter-spacing: 0.06em; color: var(--green); font-weight: 700; }
+.avail-sub { font-size: 11px; color: var(--muted); }
 
-  .star {
-    width: 14px;
-    height: 14px;
-    background: var(--accent);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
+.var-block { margin-bottom: 20px; }
+.var-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.var-label strong { color: var(--black); }
+.pills { display: flex; gap: 7px; flex-wrap: wrap; }
+.pill {
+  padding: 6px 14px;
+  border: 1.5px solid var(--black);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background: transparent;
+  color: var(--black);
+  transition: all 0.15s;
+}
+.pill:hover { background: var(--cream2); }
+.pill.on { background: var(--black); color: var(--yellow); }
 
-  .review-count {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: underline;
-    cursor: pointer;
-  }
+.hi-list { margin-bottom: 24px; }
+.hi-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 9px; font-size: 12px; line-height: 1.5; }
+.hi-marker { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--red); line-height: 1.2; flex-shrink: 0; margin-top: -1px; }
 
-  .sku-line {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
+.btn-wrap { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.btn-main {
+  display: block; width: 100%; padding: 17px;
+  background: var(--black); color: var(--yellow);
+  font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: center; text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-main:hover { background: var(--red); color: var(--white); }
+.btn-outline {
+  display: block; width: 100%; padding: 16px;
+  background: transparent; color: var(--black);
+  border: 1.5px solid var(--black);
+  font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 400;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: center; text-decoration: none; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--cream2); }
 
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 20px 0;
-  }
+.trust-strip { display: flex; gap: 16px; flex-wrap: wrap; }
+.trust-item { font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 5px; letter-spacing: 0.04em; }
+.trust-check { color: var(--green); }
 
-  /* AVAILABILITY */
-  .availability {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .avail-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    flex-shrink: 0;
-  }
-  .avail-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--green);
-    font-weight: 500;
-  }
-  .avail-detail {
-    font-size: 12px;
-    color: var(--muted);
-  }
+/* COLLAGE STRIP */
+.collage-strip {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1.5px solid var(--black);
+  min-height: 180px;
+}
+.collage-cell {
+  padding: 28px 32px;
+  border-right: 1px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.collage-cell:last-child { border-right: none; }
+.collage-cell.yellow { background: var(--yellow); }
+.collage-cell.pink { background: var(--pink); }
+.collage-big-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}
+.collage-big-text em { font-style: italic; color: var(--red); }
+.collage-sub { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+.collage-stat { font-family: 'Unbounded', sans-serif; font-size: 38px; font-weight: 900; color: var(--black); line-height: 1; }
+.collage-stat-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 8px; line-height: 1.5; }
 
-  /* VARIANTS */
-  .variant-section {
-    margin-bottom: 20px;
-  }
-  .variant-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .variant-label strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .variant-pills {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .pill {
-    padding: 6px 16px;
-    border: 1px solid var(--border);
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-    background: white;
-    color: var(--ink);
-  }
-  .pill:hover { border-color: var(--ink); }
-  .pill.active {
-    border-color: var(--ink);
-    background: var(--ink);
-    color: var(--white);
-  }
-  .pill.flag { padding: 6px 12px; }
+/* TABS */
+.tabs-wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.tabs-nav {
+  display: flex;
+  border-bottom: 1.5px solid var(--black);
+  margin: 52px 0;
+}
+.tab-btn {
+  padding: 14px 28px;
+  background: none; border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1.5px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); cursor: pointer; transition: all 0.15s;
+}
+.tab-btn:hover { color: var(--black); }
+.tab-btn.on { color: var(--black); border-bottom-color: var(--black); }
+.tab-content { display: none; }
+.tab-content.on { display: block; }
 
-  /* HIGHLIGHTS */
-  .highlights {
-    margin-bottom: 24px;
-  }
-  .highlight-item {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: var(--ink);
-  }
-  .hi-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-top: 7px;
-    flex-shrink: 0;
-  }
+/* DESC */
+.desc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-bottom: 60px; }
+.desc-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 18px; line-height: 1.2;
+}
+.desc-col p { font-size: 13px; line-height: 1.9; color: #3a3530; margin-bottom: 14px; }
+.pull-quote {
+  margin-top: 28px; padding: 24px 28px 20px;
+  border-left: 4px solid var(--black);
+  background: var(--cream);
+  position: relative;
+}
+.pull-quote::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 80px; line-height: 1;
+  color: var(--yellow);
+  position: absolute; top: -10px; left: 16px;
+}
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 16px; line-height: 1.6;
+  color: var(--ink); margin-bottom: 10px; padding-top: 22px;
+}
+.pull-quote cite {
+  font-family: 'Space Mono', monospace;
+  font-style: normal; font-size: 10px;
+  letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase;
+}
 
-  /* CTA BUTTONS */
-  .cta-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  .btn-primary {
-    width: 100%;
-    padding: 16px;
-    background: var(--ink);
-    color: var(--white);
-    border: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-  }
-  .btn-primary:hover { background: var(--accent); }
-  .btn-secondary {
-    width: 100%;
-    padding: 15px;
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-  }
-  .btn-secondary:hover { background: var(--cream); }
+/* TIMELINE */
+.timeline { margin-bottom: 60px; }
+.timeline-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 24px;
+  padding-bottom: 12px; border-bottom: 1.5px solid var(--black);
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 28px;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--cream2);
+  align-items: start;
+}
+.tl-date { font-size: 10px; letter-spacing: 0.05em; color: var(--muted); padding-top: 4px; line-height: 1.5; }
+.tl-role { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+.tl-company { font-size: 11px; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.04em; }
+.tl-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tl-tag { font-size: 9px; padding: 3px 9px; border: 1px solid var(--black); letter-spacing: 0.06em; text-transform: uppercase; }
+.tl-tag.yellow { background: var(--yellow); }
+.tl-tag.pink { background: var(--pink); }
+.tl-tag.blue { background: var(--blue); }
 
-  .trust-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .trust-icon { font-size: 14px; }
+/* SPECS */
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 60px; }
+.spec-group-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+  padding-bottom: 10px; border-bottom: 1.5px solid var(--black);
+}
+.spec-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 11px 0;
+  border-bottom: 0.5px solid var(--cream2); gap: 12px;
+}
+.spec-key { font-size: 12px; color: var(--muted); }
+.spec-val { font-size: 12px; font-weight: 700; color: var(--black); text-align: right; }
+.spec-badge {
+  font-size: 9px; padding: 3px 10px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1.5px solid currentColor; font-weight: 700;
+}
+.sb-green { color: var(--green); }
+.sb-yellow { background: var(--yellow); color: var(--black); border-color: var(--black); }
+.sb-red { color: var(--red); }
 
-  /* ── TABS ── */
-  .tabs-section {
-    margin-top: 60px;
-  }
+/* REVIEWS */
+.reviews-top {
+  display: flex; align-items: center; gap: 60px;
+  margin-bottom: 40px; padding-bottom: 32px;
+  border-bottom: 1.5px solid var(--black);
+}
+.rating-block { text-align: center; }
+.rating-num { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; line-height: 1; color: var(--black); }
+.rating-stars-big { display: flex; gap: 4px; justify-content: center; margin: 8px 0 6px; }
+.star-b {
+  width: 16px; height: 16px; background: var(--black);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.rating-sub { font-size: 10px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
 
-  .tabs-nav {
-    display: flex;
-    border-bottom: 1px solid var(--border);
-    gap: 0;
-    margin-bottom: 40px;
-  }
-  .tab-btn {
-    padding: 12px 28px;
-    border: none;
-    background: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: all 0.15s;
-  }
-  .tab-btn:hover { color: var(--ink); }
-  .tab-btn.active {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
-  }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+.review-card {
+  border: 1.5px solid var(--black);
+  padding: 28px 32px; margin-bottom: 20px;
+  background: var(--white); transition: transform 0.2s;
+}
+.review-card:hover { transform: translateY(-2px); }
+.review-card:nth-child(even) { background: var(--cream); }
+.review-top-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.reviewer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--black); }
+.reviewer-co { font-size: 10px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+.verified {
+  font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 10px; background: var(--yellow); border: 1.5px solid var(--black); white-space: nowrap;
+}
+.review-stars-sm { display: flex; gap: 3px; margin-bottom: 12px; }
+.star-sm {
+  width: 11px; height: 11px; background: var(--black);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.review-body { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; line-height: 1.7; color: var(--ink); }
+.review-date { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; margin-top: 14px; text-transform: uppercase; }
 
-  /* ── DESCRIPTION TAB ── */
-  .desc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
+/* RELATED */
+.related-section { border-top: 1.5px solid var(--black); padding: 52px 40px 60px; max-width: 1200px; margin: 0 auto; }
+.related-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 28px;
+}
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.rel-card {
+  border: 1.5px solid var(--black);
+  padding: 24px; background: var(--cream);
+  position: relative; overflow: hidden;
+}
+.rel-card::after {
+  content: 'SOLD OUT';
+  position: absolute; top: 14px; right: -26px;
+  background: var(--red); color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 8px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 4px 34px; transform: rotate(45deg);
+}
+.rel-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.rel-desc { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+.rel-status { font-size: 10px; letter-spacing: 0.06em; color: var(--red); text-transform: uppercase; font-weight: 700; }
 
-  .desc-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 16px;
-    color: var(--ink);
-  }
+/* FOOTER */
+footer {
+  background: var(--black); color: var(--white);
+  padding: 32px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 13px; color: var(--yellow); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #888; text-decoration: none; }
+.footer-links a:hover { color: var(--yellow); }
+.footer-copy { font-size: 10px; color: #555; letter-spacing: 0.06em; }
 
-  .desc-section p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #3a3632;
-    margin-bottom: 12px;
-  }
-
-  .callout-box {
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    padding: 16px 20px;
-    margin-top: 24px;
-  }
-  .callout-box p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--accent);
-    margin: 0;
-  }
-  .callout-box cite {
-    display: block;
-    font-family: 'DM Mono', monospace;
-    font-style: normal;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 8px;
-  }
-
-  /* ── SPECS TAB ── */
-  .specs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  .spec-group h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  .spec-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 9px 0;
-    border-bottom: 1px solid var(--cream);
-    gap: 16px;
-  }
-  .spec-key {
-    font-size: 13px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    flex-shrink: 0;
-  }
-  .spec-val {
-    font-size: 13px;
-    color: var(--ink);
-    text-align: right;
-    font-weight: 500;
-  }
-  .spec-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.05em;
-    border: 1px solid currentColor;
-  }
-  .badge-green { color: var(--green); background: var(--green-light); border-color: var(--green); }
-  .badge-gold { color: var(--gold); background: var(--gold-light); border-color: var(--gold); }
-  .badge-accent { color: var(--accent); background: var(--accent-light); border-color: var(--accent); }
-
-  /* ── REVIEWS TAB ── */
-  .reviews-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--border);
-  }
-  .rating-big {
-    text-align: center;
-  }
-  .rating-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    line-height: 1;
-    color: var(--ink);
-    display: block;
-  }
-  .rating-stars-big {
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-    margin: 8px 0 4px;
-  }
-  .star-big {
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-  .rating-total {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .review-card {
-    border: 1px solid var(--border);
-    padding: 24px;
-    margin-bottom: 20px;
-    background: white;
-    position: relative;
-  }
-  .review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 12px;
-  }
-  .reviewer-name {
-    font-weight: 500;
-    font-size: 14px;
-  }
-  .reviewer-company {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .verified-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--green);
-    background: var(--green-light);
-    padding: 3px 8px;
-    border: 1px solid var(--green);
-  }
-  .review-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #2a2622;
-  }
-  .review-stars {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 12px;
-  }
-  .review-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 12px;
-  }
-
-  /* ── RELATED PRODUCTS ── */
-  .related-section {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
-    margin-bottom: 60px;
-  }
-  .section-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .related-card {
-    border: 1px solid var(--border);
-    padding: 20px;
-    background: white;
-  }
-  .related-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .related-desc {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-  .related-unavail {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: #c0392b;
-  }
-
-  /* ── FOOTER ── */
-  .site-footer {
-    background: var(--ink);
-    color: var(--white);
-    padding: 20px 40px;
-    text-align: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    color: #888;
-  }
-
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    .breadcrumb { padding: 10px 20px; }
-    .hero { grid-template-columns: 1fr; gap: 32px; }
-    .product-title { font-size: 32px; }
-    .desc-grid, .specs-grid, .related-grid { grid-template-columns: 1fr; }
-    .reviews-header { flex-direction: column; gap: 24px; }
-    .tabs-nav { overflow-x: auto; }
-    .site-footer { padding: 20px; }
-  }
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .breadcrumb { padding: 10px 20px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { border-right: none; border-bottom: 1.5px solid var(--black); }
+  .hero-img-area { min-height: 420px; }
+  .hero-right { padding: 28px 24px; }
+  .product-name { font-size: 48px; }
+  .collage-strip { grid-template-columns: 1fr; }
+  .collage-cell { border-right: none; border-bottom: 1px solid var(--black); }
+  .tabs-wrap { padding: 0 20px; }
+  .desc-layout, .specs-layout { grid-template-columns: 1fr; gap: 40px; }
+  .reviews-top { flex-direction: column; gap: 20px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .related-section { padding: 40px 20px; }
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  .tl-item { grid-template-columns: 1fr; gap: 6px; }
+  .tabs-nav { overflow-x: auto; }
+}
 </style>
 </head>
 <body>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  Talent Pool &rsaquo; Content &amp; Marketing &rsaquo; E-Commerce &rsaquo; <span>Mona Zaqqa</span>
+<!-- MARQUEE -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>Content Manager · E-Commerce · Köln</span><span>★</span>
+    <span>Storyblok + Pimcore</span><span>★</span>
+    <span>DE / EN / AR — dreisprachig</span><span>★</span>
+    <span>Usability Manager · Zertifiziert 2026</span><span>★</span>
+    <span>MA North American Studies · Note 1,5</span><span>★</span>
+    <span>Content Manager · E-Commerce · Köln</span><span>★</span>
+    <span>Storyblok + Pimcore</span><span>★</span>
+    <span>DE / EN / AR — dreisprachig</span><span>★</span>
+    <span>Usability Manager · Zertifiziert 2026</span><span>★</span>
+    <span>MA North American Studies · Note 1,5</span><span>★</span>
+  </div>
 </div>
 
-<div class="container">
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mona Zaqqa</div>
+  <ul class="nav-links">
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#erfahrung">Erfahrung</a></li>
+    <li><a href="#zeugnisse">Zeugnisse</a></li>
+  </ul>
+  <a href="mailto:mozaqqa@gmail.com" class="nav-cart">Kontakt →</a>
+</nav>
 
-  <!-- HERO -->
-  <div class="hero">
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Talent Pool</a> / <a href="#">Content & Marketing</a> / <a href="#">E-Commerce</a> / Mona Zaqqa
+</div>
 
-    <!-- LEFT: IMAGE -->
-    <div class="product-image-wrap">
-      <div class="product-image">
-        <div class="badge-new">Verfügbar</div>
-        <!-- Placeholder – eigenes Foto hier einfügen -->
-        <svg viewBox="0 0 340 425" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0;">
-          <rect width="340" height="425" fill="#ede9e1"/>
-          <circle cx="170" cy="155" r="72" fill="#c8c2b8"/>
-          <ellipse cx="170" cy="340" rx="110" ry="90" fill="#c8c2b8"/>
-          <text x="170" y="410" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#8a847c">[ Foto einfügen ]</text>
-        </svg>
-      </div>
-      <div class="image-thumbnails">
-        <div class="thumb active">CV</div>
-        <div class="thumb">LinkedIn</div>
-        <div class="thumb">Portfolio</div>
-        <div class="thumb">Zeugnisse</div>
-      </div>
+<!-- HERO -->
+<section class="hero" id="profil">
+
+  <!-- LEFT: FOTO -->
+  <div class="hero-left">
+    <div class="hero-img-area">
+      <!-- Collage deco overlays -->
+      <div class="deco-circle" style="width:160px;height:160px;background:var(--yellow);opacity:0.55;top:-50px;right:-40px;"></div>
+      <div class="deco-circle" style="width:90px;height:90px;background:var(--pink);opacity:0.5;bottom:100px;right:20px;"></div>
+      <div class="deco-rect" style="width:50px;height:140px;background:var(--blue);opacity:0.35;bottom:0;left:30px;"></div>
+
+      <img src="foto.jpeg" alt="Mona Zaqqa" />
+
+      <div class="sticker-new" aria-hidden="true">Verfüg-<br>bar<br>jetzt</div>
+      <div class="sticker-stars" aria-hidden="true">★★★★★ &nbsp;3 Zeugnisse</div>
     </div>
 
-    <!-- RIGHT: INFO -->
-    <div class="product-info">
-      <div class="category-tag">Content Manager &middot; E-Commerce &middot; Köln / Remote</div>
-      <h1 class="product-title">Mona<br>Zaqqa</h1>
-      <p class="product-subtitle">Vielseitig. Präzise. Dreisprachig.</p>
+    <div class="thumb-strip">
+      <div class="thumb-item active">CV</div>
+      <div class="thumb-item">LinkedIn</div>
+      <div class="thumb-item">Portfolio</div>
+      <div class="thumb-item">Zeugnisse</div>
+    </div>
+  </div>
 
-      <div class="stars">
-        <div class="star-icons">
-          <div class="star"></div><div class="star"></div><div class="star"></div>
-          <div class="star"></div><div class="star"></div>
+  <!-- RIGHT: INFO -->
+  <div class="hero-right">
+    <div>
+      <div class="cat-tag">
+        <span class="cat-dot"></span>
+        Content Manager · E-Commerce · Köln / Remote
+      </div>
+
+      <h1 class="product-name">Mona<br><em>Zaqqa</em></h1>
+      <p class="tagline">Vielseitig. Präzise. Dreisprachig.</p>
+
+      <div class="rating-row">
+        <div class="stars-wrap">
+          <div class="star-s"></div><div class="star-s"></div><div class="star-s"></div>
+          <div class="star-s"></div><div class="star-s"></div>
         </div>
-        <span class="review-count">3 verifizierte Arbeitszeugnisse</span>
+        <span class="review-link" onclick="switchTab('reviews', document.querySelectorAll('.tab-btn')[2])">3 verifizierte Arbeitszeugnisse ↓</span>
       </div>
 
-      <div class="sku-line">SKU: MZ-CON-2024 &nbsp;|&nbsp; Modell: Storyblok + Pimcore &nbsp;|&nbsp; Baujahr: 1994</div>
-
-      <div class="divider"></div>
-
-      <div class="availability">
-        <div class="avail-dot"></div>
-        <span class="avail-text">Auf Anfrage verfügbar</span>
-        <span class="avail-detail">&nbsp;— Köln &amp; vollständig remote</span>
+      <div class="sku-row">
+        SKU: MZ-CON-2024 &nbsp;·&nbsp; Stack: Storyblok + Pimcore &nbsp;·&nbsp; Jg. 1994 &nbsp;·&nbsp; Köln
       </div>
 
-      <!-- VARIANTE: SPRACHE -->
-      <div class="variant-section">
-        <div class="variant-label">Sprache: <strong>Deutsch / Englisch / Arabisch</strong></div>
-        <div class="variant-pills">
-          <div class="pill flag active">🇩🇪 Deutsch</div>
-          <div class="pill flag">🇬🇧 English</div>
-          <div class="pill flag">🇸🇦 العربية</div>
+      <div class="section-divider"></div>
+
+      <div class="avail-row">
+        <div class="avail-pulse"></div>
+        <span class="avail-label">Auf Anfrage verfügbar</span>
+        <span class="avail-sub">&nbsp;— Köln &amp; vollständig remote</span>
+      </div>
+
+      <div class="var-block">
+        <div class="var-label">Sprache: <strong>Deutsch / Englisch / Arabisch</strong></div>
+        <div class="pills">
+          <div class="pill on">🇩🇪 Deutsch</div>
+          <div class="pill">🇬🇧 English</div>
+          <div class="pill">🇸🇦 العربية</div>
         </div>
       </div>
 
-      <!-- VARIANTE: EINSATZBEREICH -->
-      <div class="variant-section">
-        <div class="variant-label">Einsatzbereich:</div>
-        <div class="variant-pills">
-          <div class="pill active">E-Commerce</div>
+      <div class="var-block">
+        <div class="var-label">Einsatzbereich:</div>
+        <div class="pills">
+          <div class="pill on">E-Commerce</div>
           <div class="pill">Content Strategy</div>
           <div class="pill">SEO</div>
           <div class="pill">Online Marketing</div>
         </div>
       </div>
 
-      <div class="divider"></div>
+      <div class="section-divider"></div>
 
-      <!-- HIGHLIGHTS -->
-      <div class="highlights">
-        <div class="highlight-item"><div class="hi-dot"></div><span>Storyblok (Headless CMS) <em>und</em> Pimcore (PIM/DAM) — produktiv eingesetzt, gleichzeitig</span></div>
-        <div class="highlight-item"><div class="hi-dot"></div><span>Zertifizierter Usability Manager (Akademie der Deutschen Medien, März 2026)</span></div>
-        <div class="highlight-item"><div class="hi-dot"></div><span>SEO-Content für Shop, medizinische Ratgeber, Blog &amp; Website</span></div>
-        <div class="highlight-item"><div class="hi-dot"></div><span>MA North American Studies, Universität zu Köln — Gesamtnote 1,5</span></div>
-        <div class="highlight-item"><div class="hi-dot"></div><span>Erfahrung in E-Commerce, Tourismus, Media &amp; Events — branchenübergreifend einsetzbar</span></div>
-      </div>
-
-      <!-- CTA -->
-      <div class="cta-group">
-        <a href="mailto:mozaqqa@gmail.com" class="btn-primary">In den Warenkorb — Gespräch anfragen</a>
-        <a href="https://linkedin.com" class="btn-secondary">Auf die Merkliste — LinkedIn</a>
-      </div>
-
-      <div class="trust-row">
-        <div class="trust-item"><span class="trust-icon">✓</span> Vollständige Unterlagen vorhanden</div>
-        <div class="trust-item"><span class="trust-icon">✓</span> Sofort verfügbar</div>
-        <div class="trust-item"><span class="trust-icon">✓</span> Unbefristete Stelle bevorzugt</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- TABS -->
-  <div class="tabs-section">
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('desc', this)">Produktbeschreibung</button>
-      <button class="tab-btn" onclick="switchTab('specs', this)">Technische Daten</button>
-      <button class="tab-btn" onclick="switchTab('reviews', this)">Kundenbewertungen (3)</button>
-    </div>
-
-    <!-- TAB: BESCHREIBUNG -->
-    <div class="tab-content active" id="tab-desc">
-      <div class="desc-grid">
-        <div class="desc-section">
-          <h3>Über dieses Produkt</h3>
-          <p>Content ist nicht gleich Content. Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — und das produktiv, nicht nur theoretisch. Seit Dezember 2024 pflegt sie Produktdaten in Storyblok und Pimcore bei SaniFuture GmbH, erstellt SEO-optimierten Content für Shop, Website, medizinische Ratgeber und Blog, und denkt in Redaktionsplänen, nicht nur in Einzeltexten.</p>
-          <p>Was sie von anderen Content-Profilen unterscheidet: sie denkt in Nutzerführung. Als zertifizierter Usability Manager (Akademie der Deutschen Medien, 2026) verbindet sie Inhalte mit Customer Journey — aus jedem Text entsteht eine Erfahrung, nicht nur eine Seite.</p>
-          <p>Dreisprachig auf Produktionsniveau (Deutsch, Englisch, Arabisch), nachgewiesen durch internationalen Einsatz bei Media Matters International. Branchenübergreifend: E-Commerce, Tourismus, Kultur und Media-Analyse.</p>
-
-          <div class="callout-box">
-            <p>„Sie übertraf stets die vereinbarten Ziele — auch unter schwierigen Umständen und zeitlichen Engpässen."</p>
-            <cite>— WORLD INSIGHT Erlebnisreisen GmbH, Zeugnis November 2024</cite>
-          </div>
-        </div>
-
-        <div class="desc-section">
-          <h3>Was Sie bekommen</h3>
-          <p>Eine Content-Fachkraft, die den gesamten modernen E-Commerce-Content-Stack abdeckt: von der Produktdatenpflege im PIM-System über SEO-optimierte Texte bis hin zur Content-Strategie und Redaktionsplanung.</p>
-          <p>Keine Einarbeitungszeit bei Storyblok oder Pimcore — beide Systeme werden produktiv eingesetzt. Kein Rätselraten bei mehrsprachigen Anforderungen — alle drei Sprachen sofort verfügbar. Kein Theoretiker — die Erfahrung kommt aus echten Projekten mit messbaren Ergebnissen.</p>
-          <p>Dazu: ein akademisch geschulter Blick für Struktur, Argumentation und Qualität (MA, 1,5) — hilfreich immer dann, wenn Inhalte nicht nur existieren, sondern auch überzeugen sollen.</p>
-
-          <div class="callout-box">
-            <p>„Her linguistic skills ensured that our client was very happy with the delivered work."</p>
-            <cite>— Elza Martinez, CEO · Media Matters International LTD, 2023</cite>
-          </div>
-        </div>
+      <div class="hi-list">
+        <div class="hi-item"><span class="hi-marker">→</span><span>Storyblok (Headless CMS) + Pimcore (PIM/DAM) — beide produktiv eingesetzt</span></div>
+        <div class="hi-item"><span class="hi-marker">→</span><span>Zertifizierter Usability Manager — Akademie der Deutschen Medien, März 2026</span></div>
+        <div class="hi-item"><span class="hi-marker">→</span><span>SEO-Content für Shop, Website, medizinische Ratgeber und Blog</span></div>
+        <div class="hi-item"><span class="hi-marker">→</span><span>MA North American Studies, Universität zu Köln — Gesamtnote 1,5 (Abschluss Dez. 2022)</span></div>
+        <div class="hi-item"><span class="hi-marker">→</span><span>E-Commerce, Tourismus, Media & Events — branchenübergreifend einsetzbar</span></div>
       </div>
     </div>
 
-    <!-- TAB: SPECS -->
-    <div class="tab-content" id="tab-specs">
-      <div class="specs-grid">
-        <div class="spec-group">
-          <h4>Kernkompetenzen</h4>
-          <div class="spec-row">
-            <span class="spec-key">Storyblok (CMS)</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Produktiv</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Pimcore (PIM/DAM)</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Produktiv</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">SEO-Content</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Produktiv</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Content-Strategie</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Produktiv</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Usability / UX</span>
-            <span class="spec-val"><span class="spec-badge badge-gold">Zertifiziert 2026</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">WordPress / Typo3</span>
-            <span class="spec-val"><span class="spec-badge badge-accent">Erfahrung</span></span>
-          </div>
-        </div>
-
-        <div class="spec-group">
-          <h4>Weitere Tools</h4>
-          <div class="spec-row">
-            <span class="spec-key">Adobe Photoshop</span>
-            <span class="spec-val">Erfahrung</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Canva</span>
-            <span class="spec-val">Zertifiziert (Udemy, 2024)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Shopify / commercetools</span>
-            <span class="spec-val">Grundkenntnisse</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Performance Marketing</span>
-            <span class="spec-val">Social Media / Newsletter</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Redaktionsplanung</span>
-            <span class="spec-val">Eigenständig</span>
-          </div>
-        </div>
-
-        <div class="spec-group">
-          <h4>Ausbildung</h4>
-          <div class="spec-row">
-            <span class="spec-key">MA North American Studies</span>
-            <span class="spec-val">Uni Köln · Note 1,5</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">BA English Studies</span>
-            <span class="spec-val">Uni Bonn · 2019</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Usability Manager</span>
-            <span class="spec-val">Akademie dt. Medien · 2026</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Canva Komplettkurs</span>
-            <span class="spec-val">Udemy · 2024</span>
-          </div>
-        </div>
-
-        <div class="spec-group">
-          <h4>Sprachen & Rahmendaten</h4>
-          <div class="spec-row">
-            <span class="spec-key">Deutsch</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Muttersprache</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Englisch</span>
-            <span class="spec-val"><span class="spec-badge badge-green">Muttersprache</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Arabisch</span>
-            <span class="spec-val"><span class="spec-badge badge-gold">Verhandlungssicher</span></span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Standort</span>
-            <span class="spec-val">Köln / Remote DE</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Verfügbarkeit</span>
-            <span class="spec-val">Auf Anfrage</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Stelle</span>
-            <span class="spec-val">Unbefristet bevorzugt</span>
-          </div>
-        </div>
+    <div>
+      <div class="btn-wrap">
+        <a href="mailto:mozaqqa@gmail.com" class="btn-main">In den Warenkorb — Gespräch anfragen</a>
+        <a href="https://linkedin.com" class="btn-outline">Auf die Merkliste — LinkedIn</a>
       </div>
-    </div>
-
-    <!-- TAB: REVIEWS -->
-    <div class="tab-content" id="tab-reviews">
-      <div class="reviews-header">
-        <div class="rating-big">
-          <span class="rating-num">5.0</span>
-          <div class="rating-stars-big">
-            <div class="star-big"></div><div class="star-big"></div><div class="star-big"></div>
-            <div class="star-big"></div><div class="star-big"></div>
-          </div>
-          <div class="rating-total">3 verifizierte Bewertungen</div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Manuela Neuhäuser</div>
-            <div class="reviewer-company">Referentin der Unternehmensleitung · WORLD INSIGHT Erlebnisreisen GmbH</div>
-          </div>
-          <div class="verified-badge">✓ Verifizierter Kauf</div>
-        </div>
-        <div class="review-stars">
-          <div class="star"></div><div class="star"></div><div class="star"></div>
-          <div class="star"></div><div class="star"></div>
-        </div>
-        <p class="review-text">„Frau Zaqqa verfügt über sehr gute Fachkenntnisse und setzte diese jederzeit zielgerichtet und ergebnisorientiert ein. Sie lieferte, auch unter schwierigen Umständen oder bei zeitlichen Engpässen, stets sehr gute Arbeitsergebnisse. Dabei erreichte sie stets und übertraf oft die selbst gesetzten sowie vereinbarten Ziele. Wir bedauern ihren Weggang außerordentlich."</p>
-        <div class="review-date">November 2024</div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Elza Martinez, CEO</div>
-            <div class="reviewer-company">Media Matters International LTD · Hongkong</div>
-          </div>
-          <div class="verified-badge">✓ Verifizierter Kauf</div>
-        </div>
-        <div class="review-stars">
-          <div class="star"></div><div class="star"></div><div class="star"></div>
-          <div class="star"></div><div class="star"></div>
-        </div>
-        <p class="review-text">„Mona has proven herself to be a very capable writer, reliable in the position of standby writer, adapting fast to each project's requirements, and with a great sense of care and responsibility for the projects she supported. She has been a real asset to the projects and her linguistic skills ensured that our client was very happy with the delivered work."</p>
-        <div class="review-date">November 2023</div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">Anke Houchmand</div>
-            <div class="reviewer-company">Geschäftsführung · GRENZGANG Veranstaltungen, Köln</div>
-          </div>
-          <div class="verified-badge">✓ Verifizierter Kauf</div>
-        </div>
-        <div class="review-stars">
-          <div class="star"></div><div class="star"></div><div class="star"></div>
-          <div class="star"></div><div class="star"></div>
-        </div>
-        <p class="review-text">„Frau Zaqqa verfügt über eine sehr hohe Auffassungsgabe und erfüllte ihre Aufgaben stets engagiert. In die vielfältigen neuen Arbeitsbereiche hat sie sich schnell eingearbeitet und diese jederzeit sehr gewissenhaft, selbständig und zuverlässig erledigt. Zusammenfassend lässt sich sagen, dass Frau Zaqqa ihre Aufgaben stets zu unserer vollsten Zufriedenheit erledigt hat."</p>
-        <div class="review-date">April 2024</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RELATED PRODUCTS -->
-  <div class="related-section">
-    <div class="section-title">Andere betrachteten auch</div>
-    <div class="related-grid">
-      <div class="related-card">
-        <div class="related-name">Generic Content Manager*in</div>
-        <div class="related-desc">CMS-Erfahrung vorhanden. Welches CMS? Unklar. SEO-Kenntnisse: theoretisch.</div>
-        <div class="related-unavail">✕ Derzeit nicht empfohlen</div>
-      </div>
-      <div class="related-card">
-        <div class="related-name">Überqualifizierte Führungskraft</div>
-        <div class="related-desc">20 Jahre Erfahrung, bevorzugt Strategiemeetings über Umsetzung. Sehr teuer.</div>
-        <div class="related-unavail">✕ Andere Zielgruppe</div>
-      </div>
-      <div class="related-card">
-        <div class="related-name">Berufseinsteiger*in</div>
-        <div class="related-desc">Viel Energie, wenig Erfahrung mit Pimcore, Storyblok und SEO-Content in Kombination.</div>
-        <div class="related-unavail">✕ Langer Onboarding-Zeitraum</div>
+      <div class="trust-strip">
+        <div class="trust-item"><span class="trust-check">✓</span> Vollständige Unterlagen</div>
+        <div class="trust-item"><span class="trust-check">✓</span> Sofort verfügbar</div>
+        <div class="trust-item"><span class="trust-check">✓</span> Unbefristete Stelle bevorzugt</div>
       </div>
     </div>
   </div>
+</section>
 
-</div><!-- /container -->
-
-<div class="site-footer">
-  &copy; 2026 Mona Zaqqa &nbsp;·&nbsp; mozaqqa@gmail.com &nbsp;·&nbsp; 015738091683 &nbsp;·&nbsp; Pfälzerstr. 36, Köln
+<!-- COLLAGE STRIP -->
+<div class="collage-strip" aria-hidden="true">
+  <div class="collage-cell">
+    <div class="collage-big-text">Content<br>ist <em>alles.</em></div>
+    <div class="collage-sub">Produktdaten · SEO · Strategie · UX · Redaktion</div>
+  </div>
+  <div class="collage-cell yellow">
+    <div class="collage-stat">3×</div>
+    <div class="collage-stat-label">Sprachen auf<br>Produktionsniveau</div>
+  </div>
+  <div class="collage-cell pink">
+    <div class="collage-stat">1,5</div>
+    <div class="collage-stat-label">MA-Abschluss<br>Universität Köln</div>
+  </div>
 </div>
 
+<!-- TABS -->
+<div class="tabs-wrap" id="erfahrung">
+  <div class="tabs-nav">
+    <button class="tab-btn on" onclick="switchTab('desc',this)">Produktbeschreibung</button>
+    <button class="tab-btn" onclick="switchTab('specs',this)">Technische Daten</button>
+    <button class="tab-btn" onclick="switchTab('reviews',this)" id="reviews-tab">Kundenbewertungen (3)</button>
+  </div>
+
+  <!-- TAB: BESCHREIBUNG + TIMELINE -->
+  <div class="tab-content on" id="tab-desc">
+    <div class="desc-layout">
+      <div class="desc-col">
+        <h3>Über dieses Produkt</h3>
+        <p>Content ist nicht gleich Content. Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — und das produktiv, nicht nur theoretisch. Seit Dezember 2024 pflegt sie Produktdaten in Storyblok und Pimcore bei SaniFuture GmbH, erstellt SEO-optimierten Content für Shop, Website, medizinische Ratgeber und Blog, und denkt in Redaktionsplänen, nicht nur in Einzeltexten.</p>
+        <p>Was sie von anderen Content-Profilen unterscheidet: sie denkt in Nutzerführung. Als zertifizierter Usability Manager (Akademie der Deutschen Medien, März 2026) verbindet sie Inhalte konsequent mit Customer Journey — aus jedem Text entsteht eine Erfahrung, nicht nur eine Seite.</p>
+        <div class="pull-quote">
+          <p>„Sie übertraf stets die vereinbarten Ziele — auch unter schwierigen Umständen und zeitlichen Engpässen."</p>
+          <cite>— WORLD INSIGHT Erlebnisreisen GmbH, Zeugnis November 2024</cite>
+        </div>
+      </div>
+      <div class="desc-col">
+        <h3>Was Sie bekommen</h3>
+        <p>Eine Content-Fachkraft, die den gesamten modernen E-Commerce-Content-Stack abdeckt: von der Produktdatenpflege im PIM-System über SEO-optimierte Texte bis zur Content-Strategie und Redaktionsplanung.</p>
+        <p>Keine Einarbeitungszeit bei Storyblok oder Pimcore — beide Systeme werden produktiv eingesetzt. Kein Rätselraten bei mehrsprachigen Anforderungen — Deutsch, Englisch und Arabisch auf Produktionsniveau. Dazu ein akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5), der überall dort hilft, wo Inhalte nicht nur existieren, sondern auch überzeugen sollen.</p>
+        <div class="pull-quote">
+          <p>„Her linguistic skills ensured that our client was very happy with the delivered work."</p>
+          <cite>— Elza Martinez, CEO · Media Matters International LTD, November 2023</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline" id="erfahrung-tl">
+      <div class="timeline-title">Berufserfahrung — Chronologisch (neueste zuerst)</div>
+
+      <div class="tl-item">
+        <div class="tl-date">Dez. 2024 – heute</div>
+        <div class="tl-content">
+          <div class="tl-role">Content Manager (E-Commerce)</div>
+          <div class="tl-company">SaniFuture GmbH & Co. KG · Köln</div>
+          <div class="tl-tags">
+            <span class="tl-tag yellow">Storyblok</span>
+            <span class="tl-tag yellow">Pimcore</span>
+            <span class="tl-tag">SEO</span>
+            <span class="tl-tag">Content-Strategie</span>
+            <span class="tl-tag">Redaktionsplanung</span>
+            <span class="tl-tag">Asset-Management</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Jun. – Nov. 2024</div>
+        <div class="tl-content">
+          <div class="tl-role">Assistant Marketing Manager</div>
+          <div class="tl-company">WORLD INSIGHT Erlebnisreisen GmbH · Köln</div>
+          <div class="tl-tags">
+            <span class="tl-tag pink">Online-Magazin</span>
+            <span class="tl-tag pink">Newsletter</span>
+            <span class="tl-tag pink">Social Media</span>
+            <span class="tl-tag">SEO</span>
+            <span class="tl-tag">Performance Marketing</span>
+            <span class="tl-tag">Messen & Events</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Feb. – Apr. 2024</div>
+        <div class="tl-content">
+          <div class="tl-role">Praktikantin Event & Social Media</div>
+          <div class="tl-company">GRENZGANG Veranstaltungen · Köln</div>
+          <div class="tl-tags">
+            <span class="tl-tag blue">Reels</span>
+            <span class="tl-tag blue">Branding</span>
+            <span class="tl-tag">Canva</span>
+            <span class="tl-tag">Pressetexte</span>
+            <span class="tl-tag">Eventmanagement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">ca. 2023 · 8 Monate</div>
+        <div class="tl-content">
+          <div class="tl-role">Freelance Content Writer / Media Analyst</div>
+          <div class="tl-company">Media Matters International · Remote (Hongkong)</div>
+          <div class="tl-tags">
+            <span class="tl-tag">EN + DE</span>
+            <span class="tl-tag">Summary Writing</span>
+            <span class="tl-tag">Medienanalyse</span>
+            <span class="tl-tag">International</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Apr. 2017 – Jan. 2022</div>
+        <div class="tl-content">
+          <div class="tl-role">Mitarbeiterin / Schichtleitung</div>
+          <div class="tl-company">CineVision Filmtheater GmbH (WOKI) · Bonn</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Teamleitung</span>
+            <span class="tl-tag">Veranstaltungen</span>
+            <span class="tl-tag">Operations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Feb. 2015 – Dez. 2015</div>
+        <div class="tl-content">
+          <div class="tl-role">Aushilfe / Work & Travel</div>
+          <div class="tl-company">AIFS – American Institute For Foreign Study · Bonn</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Englisch</span>
+            <span class="tl-tag">Administration</span>
+            <span class="tl-tag">Recherche</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: SPECS -->
+  <div class="tab-content" id="tab-specs">
+    <div class="specs-layout">
+      <div class="spec-group">
+        <div class="spec-group-title">CMS / PIM / Tools</div>
+        <div class="spec-row"><span class="spec-key">Storyblok (Headless CMS)</span><span class="spec-val"><span class="spec-badge sb-green">Produktiv ✓</span></span></div>
+        <div class="spec-row"><span class="spec-key">Pimcore (PIM / DAM)</span><span class="spec-val"><span class="spec-badge sb-green">Produktiv ✓</span></span></div>
+        <div class="spec-row"><span class="spec-key">WordPress</span><span class="spec-val">Erfahrung</span></div>
+        <div class="spec-row"><span class="spec-key">Typo3</span><span class="spec-val">Erfahrung</span></div>
+        <div class="spec-row"><span class="spec-key">Shopify</span><span class="spec-val">Grundkenntnisse</span></div>
+        <div class="spec-row"><span class="spec-key">commercetools</span><span class="spec-val">Grundkenntnisse</span></div>
+        <div class="spec-row"><span class="spec-key">Adobe Photoshop</span><span class="spec-val">Erfahrung</span></div>
+        <div class="spec-row"><span class="spec-key">Canva</span><span class="spec-val"><span class="spec-badge sb-yellow">Zertifiziert 2024</span></span></div>
+        <div class="spec-row"><span class="spec-key">Adobe Express</span><span class="spec-val">Erfahrung</span></div>
+      </div>
+
+      <div class="spec-group">
+        <div class="spec-group-title">Kompetenzen</div>
+        <div class="spec-row"><span class="spec-key">SEO-Content</span><span class="spec-val"><span class="spec-badge sb-green">Produktiv ✓</span></span></div>
+        <div class="spec-row"><span class="spec-key">Content-Strategie</span><span class="spec-val"><span class="spec-badge sb-green">Produktiv ✓</span></span></div>
+        <div class="spec-row"><span class="spec-key">Redaktionsplanung</span><span class="spec-val">Eigenständig</span></div>
+        <div class="spec-row"><span class="spec-key">Asset-Management & QS</span><span class="spec-val">Produktiv</span></div>
+        <div class="spec-row"><span class="spec-key">Usability / UX</span><span class="spec-val"><span class="spec-badge sb-yellow">Zertifiziert März 2026</span></span></div>
+        <div class="spec-row"><span class="spec-key">Performance Marketing</span><span class="spec-val">Social / Newsletter</span></div>
+        <div class="spec-row"><span class="spec-key">Produktdatenpflege (PIM)</span><span class="spec-val">Produktiv</span></div>
+        <div class="spec-row"><span class="spec-key">Mediaplanung / Kooperationen</span><span class="spec-val">Erfahrung</span></div>
+      </div>
+
+      <div class="spec-group">
+        <div class="spec-group-title">Ausbildung</div>
+        <div class="spec-row"><span class="spec-key">MA North American Studies</span><span class="spec-val">Uni Köln · Note 1,5 · 2022</span></div>
+        <div class="spec-row"><span class="spec-key">BA English Studies</span><span class="spec-val">Uni Bonn · 2019</span></div>
+        <div class="spec-row"><span class="spec-key">Usability Manager</span><span class="spec-val">Akad. dt. Medien · 2026</span></div>
+        <div class="spec-row"><span class="spec-key">Canva Komplettkurs</span><span class="spec-val">Udemy · Okt. 2024</span></div>
+      </div>
+
+      <div class="spec-group">
+        <div class="spec-group-title">Sprachen & Rahmendaten</div>
+        <div class="spec-row"><span class="spec-key">Deutsch</span><span class="spec-val"><span class="spec-badge sb-green">Muttersprache</span></span></div>
+        <div class="spec-row"><span class="spec-key">Englisch</span><span class="spec-val"><span class="spec-badge sb-green">Muttersprache</span></span></div>
+        <div class="spec-row"><span class="spec-key">Arabisch</span><span class="spec-val"><span class="spec-badge sb-yellow">Verhandlungssicher</span></span></div>
+        <div class="spec-row"><span class="spec-key">Standort</span><span class="spec-val">Köln / Remote DE</span></div>
+        <div class="spec-row"><span class="spec-key">Verfügbarkeit</span><span class="spec-val">Auf Anfrage</span></div>
+        <div class="spec-row"><span class="spec-key">Angestrebte Stelle</span><span class="spec-val">Unbefristet, Fachkraft-Ebene</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: REVIEWS / ZEUGNISSE -->
+  <div class="tab-content" id="tab-reviews">
+    <div id="zeugnisse">
+      <div class="reviews-top">
+        <div class="rating-block">
+          <div class="rating-num">5.0</div>
+          <div class="rating-stars-big">
+            <div class="star-b"></div><div class="star-b"></div><div class="star-b"></div>
+            <div class="star-b"></div><div class="star-b"></div>
+          </div>
+          <div class="rating-sub">3 verifizierte Arbeitszeugnisse</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top-row">
+          <div>
+            <div class="reviewer-name">Manuela Neuhäuser</div>
+            <div class="reviewer-co">Referentin der Unternehmensleitung · WORLD INSIGHT Erlebnisreisen GmbH, Köln</div>
+          </div>
+          <div class="verified">✓ Verifiziert</div>
+        </div>
+        <div class="review-stars-sm">
+          <div class="star-sm"></div><div class="star-sm"></div><div class="star-sm"></div>
+          <div class="star-sm"></div><div class="star-sm"></div>
+        </div>
+        <p class="review-body">„Frau Zaqqa verfügt über sehr gute Fachkenntnisse und setzte diese jederzeit zielgerichtet und ergebnisorientiert ein. Sie lieferte, auch unter schwierigen Umständen oder bei zeitlichen Engpässen, stets sehr gute Arbeitsergebnisse. Dabei erreichte sie stets und übertraf oft die selbst gesetzten sowie vereinbarten Ziele. Wir bedauern ihren Weggang außerordentlich."</p>
+        <div class="review-date">Zeugnis · November 2024</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top-row">
+          <div>
+            <div class="reviewer-name">Elza Martinez, CEO</div>
+            <div class="reviewer-co">Media Matters International LTD · Hongkong</div>
+          </div>
+          <div class="verified">✓ Verifiziert</div>
+        </div>
+        <div class="review-stars-sm">
+          <div class="star-sm"></div><div class="star-sm"></div><div class="star-sm"></div>
+          <div class="star-sm"></div><div class="star-sm"></div>
+        </div>
+        <p class="review-body">„Mona has proven herself to be a very capable writer, reliable in the position of standby writer, adapting fast to each project's requirements, and with a great sense of care and responsibility for the projects she supported. She has been a real asset to the projects and her linguistic skills ensured that our client was very happy with the delivered work."</p>
+        <div class="review-date">Empfehlungsschreiben · November 2023</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top-row">
+          <div>
+            <div class="reviewer-name">Anke Houchmand</div>
+            <div class="reviewer-co">Geschäftsführung · GRENZGANG Veranstaltungen GbR, Köln</div>
+          </div>
+          <div class="verified">✓ Verifiziert</div>
+        </div>
+        <div class="review-stars-sm">
+          <div class="star-sm"></div><div class="star-sm"></div><div class="star-sm"></div>
+          <div class="star-sm"></div><div class="star-sm"></div>
+        </div>
+        <p class="review-body">„Frau Zaqqa verfügt über eine sehr hohe Auffassungsgabe und erfüllte ihre Aufgaben stets engagiert. In die vielfältigen neuen Arbeitsbereiche hat sie sich schnell eingearbeitet und diese jederzeit sehr gewissenhaft, selbständig und zuverlässig erledigt. Zusammenfassend lässt sich sagen, dass Frau Zaqqa ihre Aufgaben stets zu unserer vollsten Zufriedenheit erledigt hat."</p>
+        <div class="review-date">Zeugnis · April 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related-section">
+  <div class="related-title">Andere betrachteten auch —</div>
+  <div class="related-grid">
+    <div class="rel-card">
+      <div class="rel-name">Generic Content Manager*in</div>
+      <div class="rel-desc">CMS-Erfahrung vorhanden. Welches CMS? Unklar. Storyblok: noch nie gehört. Pimcore: klingt nach Käse.</div>
+      <div class="rel-status">✕ Nicht empfohlen</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-name">Überqualifizierte Führungskraft</div>
+      <div class="rel-desc">20 Jahre Erfahrung, bevorzugt Strategiemeetings gegenüber operativer Umsetzung. Sehr teuer. Braucht drei Assistenzen.</div>
+      <div class="rel-status">✕ Andere Zielgruppe</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-name">Berufseinsteiger*in</div>
+      <div class="rel-desc">Viel Enthusiasmus, wenig Erfahrung mit Pimcore, Storyblok und SEO-Content in Kombination. Langer Onboarding-Zeitraum.</div>
+      <div class="rel-status">✕ Einarbeitung erforderlich</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mona Zaqqa</div>
+  <ul class="footer-links">
+    <li><a href="mailto:mozaqqa@gmail.com">mozaqqa@gmail.com</a></li>
+    <li><a href="tel:015738091683">015738091683</a></li>
+    <li><a href="https://linkedin.com">LinkedIn</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 · Köln / Remote</div>
+</footer>
+
 <script>
-  function switchTab(name, btn) {
-    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  document.querySelectorAll('.pill').forEach(pill => {
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('tab-' + name).classList.add('on');
+  if (btn) btn.classList.add('on');
+  else document.getElementById('reviews-tab').classList.add('on');
+}
+document.querySelectorAll('.pills').forEach(group => {
+  group.querySelectorAll('.pill').forEach(pill => {
     pill.addEventListener('click', function() {
-      const group = this.closest('.variant-pills');
-      group.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      this.classList.add('active');
+      group.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+      this.classList.add('on');
     });
   });
-
-  document.querySelectorAll('.thumb').forEach(thumb => {
-    thumb.addEventListener('click', function() {
-      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-    });
+});
+document.querySelectorAll('.thumb-item').forEach(t => {
+  t.addEventListener('click', function() {
+    document.querySelectorAll('.thumb-item').forEach(x => x.classList.remove('active'));
+    this.classList.add('active');
   });
+});
 </script>
-
 </body>
 </html>
