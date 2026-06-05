@@ -10,12 +10,12 @@
 :root{
   --black:#464040;
   --white:#ffffff;
-  --off:#faf8f5;
-  --cream:#f5f0e8;
+  --off:#f7f6f6;
+  --cream:#f0efef;
   --ink:#2a2626;
   --muted:#706868;
   --subtle:#a09898;
-  --border:#ddd5cc;
+  --border:#e0d8d0;
   --pink:#f2a7c3;
   --pink-light:#fdf0f5;
   --pink-mid:#f0c0d4;
@@ -79,7 +79,7 @@ nav{
 /* FOTO */
 .hero-img{
   position:relative;overflow:hidden;
-  border-right:1.5px solid var(--black);background:var(--cream);
+  border-right:1.5px solid var(--black);background:#e8e4e0;
 }
 .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;position:absolute;inset:0;}
 
@@ -109,17 +109,6 @@ nav{
 }
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;flex-shrink:0;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.5);}}
-
-/* Thumb strip */
-.thumb-strip{display:flex;border-top:1.5px solid var(--black);}
-.thumb-item{
-  flex:1;padding:13px 6px;text-align:center;font-size:10px;
-  letter-spacing:0.08em;text-transform:uppercase;
-  border-right:1px solid var(--black);cursor:pointer;
-  transition:background 0.15s;color:var(--muted);
-}
-.thumb-item:last-child{border-right:none;}
-.thumb-item:hover,.thumb-item.active{background:var(--black);color:var(--yellow);}
 
 /* HERO RIGHT */
 .hero-right{
@@ -171,7 +160,7 @@ nav{
   font-size:13px;line-height:1.55;color:var(--ink);
 }
 .hl-row:first-child{border-top:1px solid var(--border);}
-.hl-n{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--pink);min-width:22px;flex-shrink:0;line-height:1.2;}
+.hl-n{font-family:'Space Mono',monospace;font-style:normal;font-size:13px;color:var(--pink);min-width:18px;flex-shrink:0;line-height:1.6;}
 
 /* BUTTONS */
 .btns{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
@@ -190,7 +179,7 @@ nav{
   letter-spacing:0.08em;text-transform:uppercase;
   text-align:center;cursor:pointer;transition:all 0.2s;
 }
-.btn-out:hover{background:var(--cream);}
+.btn-out:hover{background:var(--off);}
 
 .trust{display:flex;gap:16px;flex-wrap:wrap;}
 .trust-i{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px;}
@@ -232,9 +221,12 @@ nav{
 
 /* DESC TAB */
 .desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:52px;}
+.desc-single{max-width:720px;margin-bottom:44px;}
+.desc-single h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:16px;color:var(--black);}
+.desc-single p{font-size:14px;line-height:1.85;color:var(--ink);margin-bottom:12px;}
 .desc-col h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:16px;color:var(--black);line-height:1.2;}
 .desc-col p{font-size:14px;line-height:1.85;color:var(--ink);margin-bottom:14px;}
-.pull-quote{margin-top:28px;padding:22px 26px 20px;background:var(--cream);border-left:4px solid var(--pink);position:relative;}
+.pull-quote{margin-top:28px;padding:22px 26px 20px;background:var(--off);border-left:4px solid var(--pink);position:relative;}
 .pq-mark{font-family:'Playfair Display',serif;font-size:68px;line-height:0.8;color:var(--yellow);position:absolute;top:6px;left:14px;opacity:0.9;}
 .pq-text{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;line-height:1.65;color:var(--ink);padding-top:22px;margin-bottom:10px;}
 .pq-src{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
@@ -287,7 +279,7 @@ nav{
 .r-sub{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
 .rev-card{border:1.5px solid var(--black);padding:26px 30px;margin-bottom:14px;background:var(--white);transition:transform 0.2s;}
 .rev-card:hover{transform:translateY(-2px);}
-.rev-card:nth-child(even){background:var(--cream);}
+.rev-card:nth-child(even){background:var(--off);}
 .rev-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:16px;}
 .rev-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--black);}
 .rev-co{font-size:11px;letter-spacing:0.04em;color:var(--muted);margin-top:3px;}
@@ -306,7 +298,7 @@ nav{
 .kbm{padding:16px 42px;background:var(--black);color:var(--yellow);font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;}
 .kbm:hover{background:var(--pink);color:var(--black);}
 .kbo{padding:15px 42px;background:transparent;color:var(--black);border:1.5px solid var(--black);font-family:'Unbounded',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
-.kbo:hover{background:var(--cream);}
+.kbo:hover{background:var(--off);}
 .k-details{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:12px;color:var(--muted);letter-spacing:0.06em;}
 .k-details a:hover{color:var(--black);}
 
@@ -323,7 +315,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-img{min-height:440px;border-right:none;border-bottom:1.5px solid var(--black);}
   .hero-right{padding:28px 24px;}
-  .collage-strip{grid-template-columns:1fr 1fr;}
+  .collage-strip{grid-template-columns:1fr 1fr;min-height:auto;}
   .c-cell:first-child{grid-column:1/-1;}
   .tabs-outer{padding:0 20px;}
   .desc-grid,.specs-grid,.cert-grid{grid-template-columns:1fr;gap:32px;}
@@ -337,9 +329,9 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <div class="top-bar">
   <div class="top-bar-left">
-    <span>Mona Zaqqa</span><span class="sep">·</span>
     <span>Content Manager · E-Commerce</span><span class="sep">·</span>
-    <span>Köln / Remote</span>
+    <span>Köln / Remote</span><span class="sep">·</span>
+    <span>Auf Anfrage verfügbar</span>
   </div>
   <div class="top-bar-right">DE · EN · AR</div>
 </div>
@@ -361,23 +353,15 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 <!-- HERO -->
 <div class="hero">
   <!-- FOTO -->
-  <div class="hero-img" style="display:flex;flex-direction:column;">
-    <div style="flex:1;position:relative;overflow:hidden;min-height:480px;">
-      <div class="deco deco-y"></div>
-      <div class="deco deco-p"></div>
-      <img src="foto.jpeg" alt="Mona Zaqqa" onerror="this.style.display='none'">
-      <div class="avail-badge">
-        <div class="pulse-dot"></div>
-        <span id="avail-text">Verfügbar ab Oktober 2026</span>
-      </div>
-      <div class="sticker">★★★★★ &nbsp;6 Zeugnisse</div>
+  <div class="hero-img">
+    <div class="deco deco-y"></div>
+    <div class="deco deco-p"></div>
+    <img src="foto.jpeg" alt="Mona Zaqqa" onerror="this.style.display='none'">
+    <div class="avail-badge">
+      <div class="pulse-dot"></div>
+      <span id="avail-text">Verfügbar ab Oktober 2026</span>
     </div>
-    <div class="thumb-strip">
-      <div class="thumb-item active">CV</div>
-      <div class="thumb-item">LinkedIn</div>
-      <div class="thumb-item">Portfolio</div>
-      <div class="thumb-item">Zeugnisse</div>
-    </div>
+    <div class="sticker">★★★★★ &nbsp;6 Zeugnisse</div>
   </div>
 
   <!-- INFO -->
@@ -404,14 +388,12 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
         <span class="avail-label" id="avail-label">Verfügbar ab Oktober 2026</span>
         <span class="avail-sub">&nbsp;— Köln & remote</span>
       </div>
-
-      <!-- SPRACHE -->
       <div class="var-block">
         <div class="var-label">Sprache: <strong>Deutsch / Englisch / Arabisch</strong></div>
         <div class="pills">
-          <div class="pill on">🇩🇪 Deutsch</div>
-          <div class="pill">🇬🇧 English</div>
-          <div class="pill">🇸🇦 العربية</div>
+          <div class="pill on">Deutsch — fließend</div>
+          <div class="pill">English — fluent</div>
+          <div class="pill">Arabisch — verhandlungssicher</div>
         </div>
       </div>
 
@@ -430,11 +412,11 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
       <!-- HIGHLIGHTS -->
       <div class="hl-list">
-        <div class="hl-row"><span class="hl-n">01</span><span>Storyblok (CMS) + Pimcore (PIM/DAM) — beide produktiv eingesetzt</span></div>
-        <div class="hl-row"><span class="hl-n">02</span><span>Zertifizierter Usability Manager — Akademie der Deutschen Medien, 2026</span></div>
-        <div class="hl-row"><span class="hl-n">03</span><span>Dreisprachig auf Produktionsniveau — Deutsch, Englisch, Arabisch</span></div>
-        <div class="hl-row"><span class="hl-n">04</span><span>MA North American Studies, Uni Köln — Gesamtnote 1,5 (2022)</span></div>
-        <div class="hl-row"><span class="hl-n">05</span><span>E-Commerce, Tourismus, Media & Events — branchenübergreifend</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>Storyblok (CMS) + Pimcore (PIM/DAM) — beide produktiv eingesetzt</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>Zertifizierter Usability Manager — Akademie der Deutschen Medien, 2026</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>Dreisprachig auf Produktionsniveau — Deutsch, Englisch, Arabisch</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>MA North American Studies, Uni Köln — Gesamtnote 1,5 (2022)</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>E-Commerce, Tourismus, Media & Events — branchenübergreifend</span></div>
       </div>
     </div>
 
@@ -446,7 +428,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> Vollständige Unterlagen</div>
         <div class="trust-i"><span class="tchk">✓</span> Sofort verfügbar</div>
-        <div class="trust-i"><span class="tchk">✓</span> Unbefristete Stelle bevorzugt</div>
+        <div class="trust-i"><span class="tchk">✓</span> Bereit für langfristige Zusammenarbeit</div>
       </div>
     </div>
   </div>
@@ -482,33 +464,19 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
   <!-- PRODUKTBESCHREIBUNG -->
   <div class="tab-content on" id="tab-desc">
-    <div class="desc-grid">
-      <div class="desc-col">
-        <h3>Über dieses Produkt</h3>
-        <p>Content ist nicht gleich Content. Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — und das produktiv, nicht nur theoretisch. Seit Dezember 2024 pflegt sie Produktdaten in Storyblok und Pimcore bei SaniFuture GmbH, erstellt SEO-optimierten Content für Shop, Website, medizinische Ratgeber und Blog, und denkt in Redaktionsplänen, nicht nur in Einzeltexten.</p>
-        <p>Als zertifizierter Usability Manager (Akademie der Deutschen Medien, 2026) denkt sie konsequent in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung, nicht nur eine Seite.</p>
-        <div class="pull-quote">
-          <div class="pq-mark">"</div>
-          <p class="pq-text">„Sie übertraf stets die vereinbarten Ziele — auch unter schwierigen Umständen und zeitlichen Engpässen."</p>
-          <div class="pq-src">— WORLD INSIGHT Erlebnisreisen GmbH, Nov. 2024</div>
-        </div>
-      </div>
-      <div class="desc-col">
-        <h3>Was Sie bekommen</h3>
-        <p>Eine Content-Fachkraft, die den gesamten modernen E-Commerce-Content-Stack abdeckt: Produktdatenpflege im PIM-System, SEO-optimierte Texte, Content-Strategie und Redaktionsplanung.</p>
-        <p>Keine Einarbeitungszeit bei Storyblok oder Pimcore. Kein Rätselraten bei mehrsprachigen Anforderungen — Deutsch, Englisch und Arabisch auf Produktionsniveau. Dazu ein akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).</p>
-        <div class="pull-quote">
-          <div class="pq-mark">"</div>
-          <p class="pq-text">„Her linguistic skills ensured that our client was very happy with the delivered work."</p>
-          <div class="pq-src">— Media Matters International LTD, Nov. 2023</div>
-        </div>
-      </div>
+    <div class="desc-single">
+      <h3>Über dieses Produkt</h3>
+      <p>Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — produktiv, nicht nur theoretisch. Sie pflegt Produktdaten in Storyblok und Pimcore, erstellt SEO-optimierten Content für Shop, Website und Blog, und denkt in Redaktionsplänen. Als zertifizierter Usability Manager denkt sie in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung.</p>
+      <p>Den gesamten E-Commerce-Content-Stack aus einer Hand: Produktdatenpflege im PIM, SEO-Texte, Content-Strategie und Redaktionsplanung — ohne Einarbeitungszeit bei Storyblok oder Pimcore. Drei Sprachen sofort einsatzbereit. Akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).</p>
     </div>
 
     <div class="tl-label">Berufserfahrung</div>
 
     <div class="tl-item">
-      <div><div class="tl-date">Dez. 2024 – heute</div></div>
+      <div>
+        <div class="tl-date">Dez. 2024 – heute</div>
+        <div class="tl-mini-quote"><p>Aktuelle Position — vollständige Referenz auf Anfrage.</p><cite>— SaniFuture GmbH & Co. KG</cite></div>
+      </div>
       <div>
         <div class="tl-role">Content Manager (E-Commerce)</div>
         <div class="tl-co">SaniFuture GmbH & Co. KG · Köln</div>
@@ -531,7 +499,10 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     </div>
 
     <div class="tl-item">
-      <div><div class="tl-date">Feb. – Apr. 2024</div></div>
+      <div>
+        <div class="tl-date">Feb. – Apr. 2024</div>
+        <div class="tl-mini-quote"><p>„Sehr gewissenhaft, selbständig und zuverlässig erledigt."</p><cite>— GRENZGANG, 2024</cite></div>
+      </div>
       <div>
         <div class="tl-role">Praktikantin Event & Social Media</div>
         <div class="tl-co">GRENZGANG Veranstaltungen · Köln</div>
@@ -554,7 +525,10 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     </div>
 
     <div class="tl-item">
-      <div><div class="tl-date">Apr. 2017 – Jan. 2022</div></div>
+      <div>
+        <div class="tl-date">Apr. 2017 – Jan. 2022</div>
+        <div class="tl-mini-quote"><p>„Arbeitsergebnisse von sehr guter Qualität — auch unter Zeitdruck."</p><cite>— CineVision / WOKI, 2022</cite></div>
+      </div>
       <div>
         <div class="tl-role">Mitarbeiterin & Schichtleitung</div>
         <div class="tl-co">CineVision Filmtheater GmbH (WOKI) · Bonn</div>
@@ -593,13 +567,10 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
         <div class="spec-row"><span class="sk">Mediaplanung</span><span class="sv">Erfahrung</span></div>
       </div>
       <div>
-        <div class="spec-group-title">Sprachen & Rahmendaten</div>
-        <div class="spec-row"><span class="sk">Deutsch</span><span class="sv"><span class="sbadge sb-g">Muttersprache</span></span></div>
-        <div class="spec-row"><span class="sk">Englisch</span><span class="sv"><span class="sbadge sb-g">Muttersprache</span></span></div>
+        <div class="spec-group-title">Sprachen</div>
+        <div class="spec-row"><span class="sk">Deutsch</span><span class="sv"><span class="sbadge sb-g">Fließend</span></span></div>
+        <div class="spec-row"><span class="sk">Englisch</span><span class="sv"><span class="sbadge sb-g">Fluent</span></span></div>
         <div class="spec-row"><span class="sk">Arabisch</span><span class="sv"><span class="sbadge sb-y">Verhandlungssicher</span></span></div>
-        <div class="spec-row"><span class="sk">Standort</span><span class="sv">Köln / Remote DE</span></div>
-        <div class="spec-row"><span class="sk">Verfügbarkeit</span><span class="sv" id="avail-spec">—</span></div>
-        <div class="spec-row"><span class="sk">Angestrebte Rolle</span><span class="sv">Festanstellung · Fachkraft</span></div>
       </div>
     </div>
     <div class="cert-section">
@@ -713,7 +684,6 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   const txt = 'Verfügbar ab ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
   document.getElementById('avail-text').textContent = txt;
   document.getElementById('avail-label').textContent = txt;
-  document.getElementById('avail-spec').textContent = txt;
 })();
 
 function switchTab(name) {
@@ -729,13 +699,6 @@ document.querySelectorAll('.pills').forEach(group => {
       group.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
       this.classList.add('on');
     });
-  });
-});
-
-document.querySelectorAll('.thumb-item').forEach(t => {
-  t.addEventListener('click', function(){
-    document.querySelectorAll('.thumb-item').forEach(x=>x.classList.remove('active'));
-    this.classList.add('active');
   });
 });
 </script>
