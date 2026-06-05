@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mona Zaqqa — Content Manager (E-Commerce)</title>
+<title>Toujours Contente — Mona Zaqqa</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -253,7 +253,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 </div>
 
 <nav>
-  <div class="nav-logo">Mona Zaqqa</div>
+  <div class="nav-logo">Toujours Contente</div>
   <ul class="nav-links">
     <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');" data-i18n="nav-profile">Profil</a></li>
     <li><a href="javascript:void(0)" onclick="switchTab('specs');scrollToSection('tabs-anchor');" data-i18n="nav-skills">Skills</a></li>
@@ -333,7 +333,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       </div>
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust1">Vollständige Unterlagen</span></div>
-        <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust2">Sofort verfügbar</span></div>
+        <div class="trust-i"><span class="tchk">✓</span> <span id="trust2-text">Verfügbar ab Oktober 2026</span></div>
         <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust3">Bereit für langfristige Zusammenarbeit</span></div>
       </div>
     </div>
@@ -342,7 +342,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <div class="collage-strip">
   <div class="c-cell">
-    <div class="c-big">Content<br>ist <span style="color:var(--pink);font-style:italic;" data-i18n="collage-all">alles.</span></div>
+    <div class="c-big"><span data-i18n="collage-big">Drei<br>Sprachen.</span> <span style="color:var(--pink);font-style:italic;" data-i18n="collage-all">Eine.</span></div>
     <div class="c-sub" data-i18n="collage-sub">Produktdaten · SEO · Strategie · UX · Redaktion</div>
   </div>
   <div class="c-cell pink">
@@ -596,7 +596,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 </div>
 
 <footer>
-  <div class="f-logo">Mona Zaqqa</div>
+  <div class="f-logo">Toujours Contente</div>
   <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
     <a href="mailto:mozaqqa@gmail.com" style="font-size:11px;color:#888;letter-spacing:0.06em;">mozaqqa@gmail.com</a>
     <a href="tel:015738091683" style="font-size:11px;color:#888;letter-spacing:0.06em;">015738091683</a>
@@ -627,8 +627,8 @@ const T = {
     'hl4':'E-Commerce, Tourismus, Media: branchenübergreifend einsetzbar',
     'hl5':'Schreibqualität auf CEO-Level bestätigt: international, mehrsprachig',
     'btn-cart':'In den Warenkorb →','btn-wishlist':'Auf die Merkliste',
-    'trust1':'Vollständige Unterlagen','trust2':'Sofort verfügbar','trust3':'Bereit für langfristige Zusammenarbeit',
-    'collage-all':'alles.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
+    'trust1':'Vollständige Unterlagen','trust2':'','trust3':'Bereit für langfristige Zusammenarbeit',
+    'collage-big':'Drei<br>Sprachen.','collage-all':'Eine.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
     'collage-3x':'Sprachen auf Produktionsniveau','collage-15':'MA-Note Universität Köln','collage-6':'Zeugnisse & Empfehlungen',
     'tab-desc':'Produktbeschreibung','tab-specs':'Technische Daten','tab-reviews':'Kundenbewertungen (6)',
     'desc-title':'Über dieses Produkt',
@@ -636,10 +636,10 @@ const T = {
     'desc-p2':'Den gesamten E-Commerce-Content-Stack aus einer Hand: Produktdatenpflege im PIM, SEO-Texte, Content-Strategie und Redaktionsplanung — ohne Einarbeitungszeit bei Storyblok oder Pimcore. Drei Sprachen sofort einsatzbereit. Akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).',
     'tl-exp':'Berufserfahrung','tl-edu':'Ausbildung',
     'tl1-date':'Dez. 2024 – heute','tl1-role':'Content Manager (E-Commerce)','tl1-desc':'Produktdatenpflege in Storyblok (CMS) und Pimcore (PIM/DAM). SEO-optimierte Inhalte für Shop, Website, medizinische Ratgeber und Blog. Content-Strategie, Redaktionsplanung, Asset-Management und Qualitätssicherung.',
-    'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Redaktion Online-Reisemagazin, Newsletter und Social-Media-Kanäle. Performance Marketing, SEO, Mediaplanung und Kooperationen. Planung und Durchführung von Messen und Events.','tl2-quote':'„Übertraf stets die vereinbarten Ziele."',
-    'tl3-date':'Feb. – Apr. 2024','tl3-role':'Praktikantin Event & Social Media','tl3-desc':'Social-Media-Content, Reels und Pressetexte. Konzeption und Umsetzung von Branding-Maßnahmen für Instagram. Veranstaltungsbegleitung.','tl3-quote':'„Sehr gewissenhaft, selbständig und zuverlässig erledigt."',
-    'tl4-date':'ca. 2023 · 8 Monate','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary Writing für internationale Kunden auf Englisch und Deutsch. Branchenübergreifend, internationale Zusammenarbeit.','tl4-quote':'„Very capable writer — real asset."',
-    'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Mitarbeiterin & Schichtleitung','tl5-desc':'Teamleitung bis 6 Personen, Kassenführung, Sonderveranstaltungen. Parallel zum Studium.','tl5-quote':'„Arbeitsergebnisse von sehr guter Qualität — auch unter Zeitdruck."',
+    'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Redaktion Online-Reisemagazin, Newsletter und Social-Media-Kanäle. Performance Marketing, SEO, Mediaplanung und Kooperationen. Planung und Durchführung von Messen und Events.','tl2-quote':'„Frau Zaqqa verfügt über sehr gute Fachkenntnisse und setzte diese jederzeit zielgerichtet und ergebnisorientiert ein. Dabei erreichte sie stets und übertraf oft die selbst gesetzten sowie vereinbarten Ziele."',
+    'tl3-date':'Feb. – Apr. 2024','tl3-role':'Praktikantin Event & Social Media','tl3-desc':'Social-Media-Content, Reels und Pressetexte. Konzeption und Umsetzung von Branding-Maßnahmen für Instagram. Veranstaltungsbegleitung.','tl3-quote':'„In die vielfältigen neuen Arbeitsbereiche hat sie sich schnell eingearbeitet und diese jederzeit sehr gewissenhaft, selbständig und zuverlässig erledigt."',
+    'tl4-date':'ca. 2023 · 8 Monate','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary Writing für internationale Kunden auf Englisch und Deutsch. Branchenübergreifend, internationale Zusammenarbeit.','tl4-quote':'"She has proven herself to be a very capable writer, reliable in the position of standby writer, adapting fast to each project\'s requirements — a real asset to the projects."',
+    'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Mitarbeiterin & Schichtleitung','tl5-desc':'Teamleitung bis 6 Personen, Kassenführung, Sonderveranstaltungen. Parallel zum Studium.','tl5-quote':'„Ihre Arbeitsergebnisse waren auch unter schwierigen Bedingungen, Zeitdruck und bei wechselnden Anforderungen von sehr guter Qualität. Frau Zaqqa wurde wegen ihres Engagements stets sehr geschätzt."',
     'edu1-role':'Master of Arts — North American Studies','edu1-desc':'Gesamtnote 1,5 (sehr gut). Abschlussarbeit: The Horror Within — A Critique of White Liberalism in Jordan Peele\'s Get Out.',
     'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'Note 2,3. Abschlussarbeit: Charlotte Perkins Gilmans Herland — Feminist Utopian Reversal of Gender Hierarchies.',
     'tag-contentstrategy':'Content-Strategie','tag-redaktion':'Redaktionsplanung','tag-magazine':'Online-Magazin','tag-events':'Events','tag-press':'Pressetexte','tag-writing':'Summary Writing','tag-media':'Medienanalyse','tag-team':'Teamleitung','tag-events2':'Veranstaltungen','tag-cultural':'Kulturwissenschaft','tag-mediaanalysis':'Medienanalyse','tag-linguistics':'Linguistik','tag-literature':'Literaturwissenschaft',
@@ -684,8 +684,8 @@ const T = {
     'hl4':'E-Commerce, Tourism, Media: cross-industry experience',
     'hl5':'Writing quality confirmed at CEO level: international, multilingual',
     'btn-cart':'Add to Cart →','btn-wishlist':'Add to Wishlist',
-    'trust1':'Full documentation available','trust2':'Immediately available','trust3':'Open to long-term collaboration',
-    'collage-all':'everything.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
+    'trust1':'Full documentation available','trust2':'','trust3':'Open to long-term collaboration',
+    'collage-big':'Three<br>Languages.','collage-all':'One.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
     'collage-3x':'Languages at production level','collage-15':'MA grade · University of Cologne','collage-6':'References & Recommendations',
     'tab-desc':'Product Description','tab-specs':'Specifications','tab-reviews':'Customer Reviews (6)',
     'desc-title':'About this Product',
@@ -693,10 +693,10 @@ const T = {
     'desc-p2':'The complete e-commerce content stack in one person: product data management in PIM, SEO copy, content strategy and editorial planning — no onboarding time needed for Storyblok or Pimcore. Three languages ready to go. Academically trained eye for structure and quality (MA, grade 1.5).',
     'tl-exp':'Work Experience','tl-edu':'Education',
     'tl1-date':'Dec. 2024 – present','tl1-role':'Content Manager (E-Commerce)','tl1-desc':'Product data management in Storyblok (CMS) and Pimcore (PIM/DAM). SEO-optimised content for shop, website, medical guides and blog. Content strategy, editorial planning, asset management and quality assurance.',
-    'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Editorial work for online travel magazine, newsletter and social media channels. Performance marketing, SEO, media planning and partnerships. Planning and execution of trade fairs and events.','tl2-quote':'"Consistently exceeded agreed targets."',
-    'tl3-date':'Feb. – Apr. 2024','tl3-role':'Intern Event & Social Media','tl3-desc':'Social media content, Reels and press texts. Conception and implementation of branding measures for Instagram. Event support.','tl3-quote':'"Carried out work conscientiously, independently and reliably."',
+    'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Editorial work for online travel magazine, newsletter and social media channels. Performance marketing, SEO, media planning and partnerships. Planning and execution of trade fairs and events.','tl2-quote':'"She demonstrated excellent expertise and applied it purposefully at all times. She consistently achieved and often exceeded her targets."',
+    'tl3-date':'Feb. – Apr. 2024','tl3-role':'Intern Event & Social Media','tl3-desc':'Social media content, Reels and press texts. Conception and implementation of branding measures for Instagram. Event support.','tl3-quote':'"She quickly familiarised herself with diverse new areas of responsibility and completed all tasks conscientiously, independently and reliably at all times."',
     'tl4-date':'approx. 2023 · 8 months','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary writing for international clients in English and German. Cross-industry, international collaboration.','tl4-quote':'"Very capable writer — real asset."',
-    'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Team Member & Shift Leader','tl5-desc':'Team management up to 6 people, cash management, special events. Alongside studies.','tl5-quote':'"Work results of very high quality — even under time pressure."',
+    'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Team Member & Shift Leader','tl5-desc':'Team management up to 6 people, cash management, special events. Alongside studies.','tl5-quote':'"Her work results were of very high quality even under difficult conditions, time pressure and changing requirements. She was greatly appreciated for her commitment."',
     'edu1-role':'Master of Arts — North American Studies','edu1-desc':'GPA 1.5 (A, with distinction). Thesis: The Horror Within — A Critique of White Liberalism in Jordan Peele\'s Get Out.',
     'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'GPA 2.3 (B). Thesis: Charlotte Perkins Gilman\'s Herland — Feminist Utopian Reversal of Gender Hierarchies.',
     'tag-contentstrategy':'Content Strategy','tag-redaktion':'Editorial Planning','tag-magazine':'Online Magazine','tag-events':'Events','tag-press':'Press Texts','tag-writing':'Summary Writing','tag-media':'Media Analysis','tag-team':'Team Leadership','tag-events2':'Events','tag-cultural':'Cultural Studies','tag-mediaanalysis':'Media Analysis','tag-linguistics':'Linguistics','tag-literature':'Literary Studies',
@@ -741,8 +741,8 @@ const T = {
     'hl4':'تجارة إلكترونية، سياحة، إعلام: خبرة في قطاعات متعددة',
     'hl5':'جودة كتابة مؤكدة على مستوى CEO: دولية ومتعددة اللغات',
     'btn-cart':'أضيفيني للسلة ←','btn-wishlist':'أضيفيني للمفضلة',
-    'trust1':'وثائق كاملة متوفرة','trust2':'متاحة فوراً','trust3':'مستعدة للتعاون طويل الأمد',
-    'collage-all':'كل شيء.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
+    'trust1':'وثائق كاملة متوفرة','trust2':'','trust3':'مستعدة للتعاون طويل الأمد',
+    'collage-big':'ثلاث<br>لغات.','collage-all':'واحدة.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
     'collage-3x':'لغات على مستوى احترافي','collage-15':'تقدير الماجستير · جامعة كولونيا','collage-6':'شهادات وتوصيات',
     'tab-desc':'وصف المنتج','tab-specs':'المواصفات التقنية','tab-reviews':'تقييمات العملاء (٦)',
     'desc-title':'عن هاد المنتج',
@@ -750,10 +750,10 @@ const T = {
     'desc-p2':'المنظومة الكاملة لمحتوى التجارة الإلكترونية بإيد واحدة: إدارة بيانات المنتجات في PIM، نصوص SEO، استراتيجية المحتوى والتخطيط التحريري — وما في حاجة لفترة تدريب على Storyblok أو Pimcore. ثلاث لغات جاهزة على طول. نظرة أكاديمية للهيكلة والجودة (ماجستير، تقدير ١٫٥).',
     'tl-exp':'الخبرة المهنية','tl-edu':'التعليم',
     'tl1-date':'ديسمبر ٢٠٢٤ – الحين','tl1-role':'مدير محتوى (تجارة إلكترونية)','tl1-desc':'إدارة بيانات المنتجات في Storyblok وPimcore. محتوى محسّن لـ SEO للمتجر والموقع والأدلة الطبية والمدونة. استراتيجية المحتوى، التخطيط التحريري، إدارة الأصول وضبط الجودة.',
-    'tl2-date':'يونيو – نوفمبر ٢٠٢٤','tl2-role':'مساعدة مدير تسويق','tl2-desc':'تحرير مجلة السفر الإلكترونية، النشرة الإخبارية وقنوات التواصل الاجتماعي. التسويق الأداتي، SEO، تخطيط الإعلام والشراكات. تنظيم ومتابعة المعارض والفعاليات.','tl2-quote':'«تجاوزت الأهداف المتفق عليها باستمرار.»',
-    'tl3-date':'فبراير – أبريل ٢٠٢٤','tl3-role':'متدربة فعاليات وسوشيال ميديا','tl3-desc':'محتوى سوشيال ميديا، Reels ونصوص صحفية. تصميم وتطبيق مبادرات العلامة التجارية على إنستقرام. مرافقة الفعاليات.','tl3-quote':'«أنجزت أعمالها بدقة واستقلالية وموثوقية.»',
+    'tl2-date':'يونيو – نوفمبر ٢٠٢٤','tl2-role':'مساعدة مدير تسويق','tl2-desc':'تحرير مجلة السفر الإلكترونية، النشرة الإخبارية وقنوات التواصل الاجتماعي. التسويق الأداتي، SEO، تخطيط الإعلام والشراكات. تنظيم ومتابعة المعارض والفعاليات.','tl2-quote':'«أظهرت خبرة ممتازة وطبّقتها بشكل هادف في كل وقت. وصلت دايماً لأهدافها وكتير أحيان تجاوزتها.»',
+    'tl3-date':'فبراير – أبريل ٢٠٢٤','tl3-role':'متدربة فعاليات وسوشيال ميديا','tl3-desc':'محتوى سوشيال ميديا، Reels ونصوص صحفية. تصميم وتطبيق مبادرات العلامة التجارية على إنستقرام. مرافقة الفعاليات.','tl3-quote':'«اندمجت بسرعة في المجالات الجديدة وأنجزت كل المهام بدقة واستقلالية وموثوقية عالية.»',
     'tl4-date':'تقريباً ٢٠٢٣ · ٨ أشهر','tl4-role':'كاتبة محتوى حرة / محللة إعلامية','tl4-desc':'كتابة ملخصات لعملاء دوليين بالإنجليزية والألمانية. خبرة في قطاعات متعددة وتعاون دولي.','tl4-quote':'«كاتبة قادرة جداً — إضافة حقيقية للمشاريع.»',
-    'tl5-date':'أبريل ٢٠١٧ – يناير ٢٠٢٢','tl5-role':'موظفة ومشرفة وردية','tl5-desc':'إدارة فريق حتى ٦ أشخاص، إدارة الصندوق، فعاليات خاصة. بالتوازي مع الدراسة.','tl5-quote':'«نتائج عمل عالية الجودة — حتى تحت ضغط الوقت.»',
+    'tl5-date':'أبريل ٢٠١٧ – يناير ٢٠٢٢','tl5-role':'موظفة ومشرفة وردية','tl5-desc':'إدارة فريق حتى ٦ أشخاص، إدارة الصندوق، فعاليات خاصة. بالتوازي مع الدراسة.','tl5-quote':'«كانت نتائج عملها عالية الجودة حتى في الظروف الصعبة وتحت ضغط الوقت. قدّرناها كتير بسبب التزامها.»',
     'edu1-role':'ماجستير آداب — دراسات أمريكا الشمالية','edu1-desc':'تقدير ١٫٥ (ممتاز). أطروحة: The Horror Within — نقد الليبرالية البيضاء في فيلم Get Out لجوردان بيل.',
     'edu2-role':'بكالوريوس آداب — دراسات اللغة الإنجليزية','edu2-desc':'تقدير ٢٫٣. أطروحة: Herland لشارلوت بيركنز جيلمان — عكس هرمية الجنسين في اليوتوبيا النسوية.',
     'tag-contentstrategy':'استراتيجية المحتوى','tag-redaktion':'التخطيط التحريري','tag-magazine':'مجلة إلكترونية','tag-events':'فعاليات','tag-press':'نصوص صحفية','tag-writing':'كتابة ملخصات','tag-media':'تحليل إعلامي','tag-team':'قيادة الفريق','tag-events2':'فعاليات','tag-cultural':'علوم ثقافية','tag-mediaanalysis':'تحليل إعلامي','tag-linguistics':'لغويات','tag-literature':'أدب',
@@ -808,13 +808,8 @@ function setLang(lang) {
     }
   });
 
-  // Update avail dates
-  const now = new Date();
-  const avail = new Date(now.getFullYear(), now.getMonth() + 4, 1);
-  const months = t['avail-prefix-months'];
-  const txt = t['avail-prefix'] + ' ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
-  document.getElementById('avail-text').textContent = txt;
-  document.getElementById('avail-label').textContent = txt;
+  // Update avail dates for new language
+  updateAvailDate(lang);
 
   // Update lang btn states
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -822,7 +817,7 @@ function setLang(lang) {
   });
 
   // Update page title
-  const titles = {de:'Mona Zaqqa — Content Manager (E-Commerce)', en:'Mona Zaqqa — Content Manager (E-Commerce)', ar:'منى زقة — مدير محتوى'};
+  const titles = {de:'Toujours Contente — Mona Zaqqa', en:'Toujours Contente — Mona Zaqqa', ar:'Toujours Contente — منى زقة'};
   document.title = titles[lang];
 }
 
