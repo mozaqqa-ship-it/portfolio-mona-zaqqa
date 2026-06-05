@@ -207,23 +207,22 @@ nav{
 /* TABS */
 .tabs-outer{max-width:1160px;margin:0 auto;padding:0 48px;}
 .tabs-sticky{
-  position:sticky;top:57px;z-index:90;
+  position:sticky;top:54px;z-index:90;
   background:var(--white);
   border-bottom:1.5px solid var(--black);
-  border-top:1px solid var(--border);
   margin-top:48px;
 }
 .tabs-sticky-inner{max-width:1160px;margin:0 auto;padding:0 48px;}
 .tabs-nav{display:flex;}
 .tab-btn{
-  padding:16px 30px;background:none;border:none;
-  border-bottom:3px solid transparent;margin-bottom:-1.5px;
+  padding:14px 30px;background:none;
+  border:none;
   font-family:'Space Mono',monospace;font-size:11px;
   letter-spacing:0.1em;text-transform:uppercase;
   color:var(--muted);cursor:pointer;transition:all 0.15s;
 }
 .tab-btn:hover{color:var(--black);}
-.tab-btn.on{color:var(--black);border-bottom-color:var(--red);font-weight:700;}
+.tab-btn.on{color:var(--black);background:var(--off);font-weight:700;}
 .tab-content{display:none;padding:52px 0 72px;}
 .tab-content.on{display:block;}
 
@@ -324,12 +323,13 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .hero-img{min-height:440px;border-right:none;border-bottom:1.5px solid var(--black);}
   .hero-right{padding:28px 24px;}
   .collage-strip{grid-template-columns:1fr 1fr;min-height:auto;}
-  .c-cell:first-child{grid-column:1/-1;}
   .tabs-outer{padding:0 20px;}
-  .tabs-sticky{top:51px;}
+  .tabs-sticky{top:48px;}
   .tabs-sticky-inner{padding:0 20px;}
   .desc-grid,.specs-grid,.cert-grid{grid-template-columns:1fr;gap:32px;}
   .tl-item{grid-template-columns:1fr;gap:8px;}
+  .c-big{font-size:26px;}
+  .c-stat{font-size:28px;}
   .kontakt-sec{padding:56px 24px;}
   footer{padding:20px 24px;}
 }
@@ -401,7 +401,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
         <div class="var-label">Sprache: <strong>Deutsch / Englisch / Arabisch</strong></div>
         <div class="pills">
           <div class="pill on">Deutsch — fließend</div>
-          <div class="pill">English — fluent</div>
+          <div class="pill">Englisch — fließend</div>
           <div class="pill">Arabisch — verhandlungssicher</div>
         </div>
       </div>
@@ -421,17 +421,18 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
       <!-- HIGHLIGHTS -->
       <div class="hl-list">
-        <div class="hl-row"><span class="hl-n">★</span><span>Storyblok (CMS) + Pimcore (PIM/DAM) — beide produktiv eingesetzt</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span>Zertifizierter Usability Manager — Akademie der Deutschen Medien, 2026</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span>MA North American Studies, Uni Köln — Gesamtnote 1,5 (2022)</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span>E-Commerce, Tourismus, Media & Events — branchenübergreifend</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>Storyblok + Pimcore: produktiv im Einsatz, nicht nur theoretisch</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>UX-Zertifikat 2026: denkt in Customer Journey, nicht nur Content</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>MA 1,5: analytisch stark, schnelle Einarbeitung in neue Themen</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>E-Commerce, Tourismus, Media: branchenübergreifend einsetzbar</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span>Schreibqualität auf CEO-Level bestätigt: international, mehrsprachig</span></div>
       </div>
     </div>
 
     <div>
       <div class="btns">
-        <a href="#kontakt" class="btn-main">In den Warenkorb →</a>
-        <a href="https://linkedin.com" class="btn-out">Auf die Merkliste — LinkedIn</a>
+        <a href="mailto:mozaqqa@gmail.com" class="btn-main">In den Warenkorb →</a>
+        <a href="https://linkedin.com" class="btn-out">Auf die Merkliste</a>
       </div>
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> Vollständige Unterlagen</div>
@@ -485,10 +486,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     <div class="tl-label">Berufserfahrung</div>
 
     <div class="tl-item">
-      <div>
-        <div class="tl-date">Dez. 2024 – heute</div>
-        <div class="tl-mini-quote"><p>Aktuelle Position — vollständige Referenz auf Anfrage.</p><cite>— SaniFuture GmbH & Co. KG</cite></div>
-      </div>
+      <div><div class="tl-date">Dez. 2024 – heute</div></div>
       <div>
         <div class="tl-role">Content Manager (E-Commerce)</div>
         <div class="tl-co">SaniFuture GmbH & Co. KG · Köln</div>
@@ -566,8 +564,8 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       <div>
         <div class="tl-role">Bachelor of Arts — English Studies</div>
         <div class="tl-co">Rheinische Friedrich-Wilhelms-Universität Bonn</div>
-        <div class="tl-desc">Abschlussarbeit: <em>Charlotte Perkins Gilmans Herland — Feminist Utopian Reversal of Gender Hierarchies.</em></div>
-        <div class="tl-tags"><span class="tl-tag">Linguistik</span><span class="tl-tag">Literaturwissenschaft</span></div>
+        <div class="tl-desc">Note 2,3. Abschlussarbeit: <em>Charlotte Perkins Gilmans Herland — Feminist Utopian Reversal of Gender Hierarchies.</em></div>
+        <div class="tl-tags"><span class="tl-tag">Note 2,3</span><span class="tl-tag">Linguistik</span><span class="tl-tag">Literaturwissenschaft</span></div>
       </div>
     </div>
   </div>
@@ -722,6 +720,19 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   const txt = 'Verfügbar ab ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
   document.getElementById('avail-text').textContent = txt;
   document.getElementById('avail-label').textContent = txt;
+})();
+
+// Set sticky tabs top dynamically based on nav height
+(function(){
+  function setTabsTop() {
+    const nav = document.querySelector('nav');
+    if (nav) {
+      const h = nav.getBoundingClientRect().height;
+      document.querySelector('.tabs-sticky').style.top = h + 'px';
+    }
+  }
+  setTabsTop();
+  window.addEventListener('resize', setTabsTop);
 })();
 
 function switchTab(name) {
