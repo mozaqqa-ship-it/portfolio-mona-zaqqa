@@ -140,7 +140,7 @@ nav{
 
 /* VARIANT SELECTOR */
 .var-block{margin-bottom:18px;}
-.var-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.var-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);margin-bottom:7px;font-weight:700;}
 .var-label strong{color:var(--black);}
 .pills{display:flex;gap:7px;flex-wrap:wrap;}
 .pill{
@@ -152,13 +152,12 @@ nav{
 .pill.on{background:var(--black);color:var(--yellow);border-color:var(--black);}
 
 /* HIGHLIGHTS */
-.hl-list{margin-bottom:22px;}
+.hl-list{margin-bottom:22px;background:var(--white);padding:8px 14px;border:1px solid var(--border);}
 .hl-row{
   display:flex;gap:13px;align-items:flex-start;
-  padding:10px 0;border-bottom:1px solid var(--border);
-  font-size:13px;line-height:1.55;color:var(--ink);
+  padding:5px 0;
+  font-size:13px;line-height:1.5;color:var(--ink);
 }
-.hl-row:first-child{border-top:1px solid var(--border);}
 .hl-n{font-family:'Space Mono',monospace;font-style:normal;font-size:13px;color:var(--pink);min-width:18px;flex-shrink:0;line-height:1.6;}
 
 /* BUTTONS */
@@ -404,13 +403,12 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       <div class="var-block">
         <div class="var-label">Sprache:</div>
         <div class="pills">
-          <div class="pill on">Deutsch — fließend</div>
-          <div class="pill">Englisch — fließend</div>
-          <div class="pill">Arabisch — verhandlungssicher</div>
+          <div class="pill on">Deutsch</div>
+          <div class="pill">Englisch</div>
+          <div class="pill">Arabisch</div>
         </div>
       </div>
 
-      <!-- EINSATZBEREICH -->
       <div class="var-block">
         <div class="var-label">Einsatzbereich:</div>
         <div class="pills">
@@ -421,9 +419,6 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
         </div>
       </div>
 
-      <div class="hr"></div>
-
-      <!-- HIGHLIGHTS -->
       <div class="hl-list">
         <div class="hl-row"><span class="hl-n">★</span><span>Storyblok + Pimcore: produktiv im Einsatz, nicht nur theoretisch</span></div>
         <div class="hl-row"><span class="hl-n">★</span><span>UX-Zertifikat 2026: denkt in Customer Journey, nicht nur Content</span></div>
