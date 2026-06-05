@@ -342,7 +342,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <div class="collage-strip">
   <div class="c-cell">
-    <div class="c-big"><span data-i18n="collage-big">Drei<br>Sprachen.</span> <span style="color:var(--pink);font-style:italic;" data-i18n="collage-all">Eine.</span></div>
+    <div class="c-big"><span data-i18n="collage-big">Qualität,<br>die</span> <span style="color:var(--pink);font-style:italic;" data-i18n="collage-all">überzeugt.</span></div>
     <div class="c-sub" data-i18n="collage-sub">Produktdaten · SEO · Strategie · UX · Redaktion</div>
   </div>
   <div class="c-cell pink">
@@ -628,7 +628,7 @@ const T = {
     'hl5':'Schreibqualität auf CEO-Level bestätigt: international, mehrsprachig',
     'btn-cart':'In den Warenkorb →','btn-wishlist':'Auf die Merkliste',
     'trust1':'Vollständige Unterlagen','trust2':'','trust3':'Bereit für langfristige Zusammenarbeit',
-    'collage-big':'Drei<br>Sprachen.','collage-all':'Eine.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
+    'collage-big':'Qualität,<br>die','collage-all':'überzeugt.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
     'collage-3x':'Sprachen auf Produktionsniveau','collage-15':'MA-Note Universität Köln','collage-6':'Zeugnisse & Empfehlungen',
     'tab-desc':'Produktbeschreibung','tab-specs':'Technische Daten','tab-reviews':'Kundenbewertungen (6)',
     'desc-title':'Über dieses Produkt',
@@ -685,7 +685,7 @@ const T = {
     'hl5':'Writing quality confirmed at CEO level: international, multilingual',
     'btn-cart':'Add to Cart →','btn-wishlist':'Add to Wishlist',
     'trust1':'Full documentation available','trust2':'','trust3':'Open to long-term collaboration',
-    'collage-big':'Three<br>Languages.','collage-all':'One.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
+    'collage-big':'Quality you<br>can','collage-all':'count on.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
     'collage-3x':'Languages at production level','collage-15':'MA grade · University of Cologne','collage-6':'References & Recommendations',
     'tab-desc':'Product Description','tab-specs':'Specifications','tab-reviews':'Customer Reviews (6)',
     'desc-title':'About this Product',
@@ -742,7 +742,7 @@ const T = {
     'hl5':'جودة كتابة مؤكدة على مستوى CEO: دولية ومتعددة اللغات',
     'btn-cart':'أضيفيني للسلة ←','btn-wishlist':'أضيفيني للمفضلة',
     'trust1':'وثائق كاملة متوفرة','trust2':'','trust3':'مستعدة للتعاون طويل الأمد',
-    'collage-big':'ثلاث<br>لغات.','collage-all':'واحدة.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
+    'collage-big':'جودة<br>تُقنع','collage-all':'دائماً.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
     'collage-3x':'لغات على مستوى احترافي','collage-15':'تقدير الماجستير · جامعة كولونيا','collage-6':'شهادات وتوصيات',
     'tab-desc':'وصف المنتج','tab-specs':'المواصفات التقنية','tab-reviews':'تقييمات العملاء (٦)',
     'desc-title':'عن هاد المنتج',
@@ -782,6 +782,18 @@ const T = {
 
 let currentLang = 'de';
 
+function updateAvailDate(lang) {
+  const t = T[lang];
+  const now = new Date();
+  const avail = new Date(now.getFullYear(), now.getMonth() + 4, 1);
+  const months = t['avail-prefix-months'];
+  const txt = t['avail-prefix'] + ' ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
+  document.getElementById('avail-text').textContent = txt;
+  document.getElementById('avail-label').textContent = txt;
+  const t2 = document.getElementById('trust2-text');
+  if (t2) t2.textContent = txt;
+}
+
 function setLang(lang) {
   currentLang = lang;
   const t = T[lang];
@@ -802,6 +814,8 @@ function setLang(lang) {
         el.innerHTML = lang === 'ar'
           ? t[key]
           : (lang === 'en' ? 'Ready for a<br><em>Conversation?</em>' : 'Bereit für das<br><em>Gespräch?</em>');
+      } else if (key === 'collage-big') {
+        el.innerHTML = t[key];
       } else {
         el.textContent = t[key];
       }
@@ -822,14 +836,7 @@ function setLang(lang) {
 }
 
 // Init date on load
-(function(){
-  const now = new Date();
-  const avail = new Date(now.getFullYear(), now.getMonth() + 4, 1);
-  const months = T.de['avail-prefix-months'];
-  const txt = T.de['avail-prefix'] + ' ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
-  document.getElementById('avail-text').textContent = txt;
-  document.getElementById('avail-label').textContent = txt;
-})();
+updateAvailDate('de');
 
 // Offset-aware scroll
 function scrollToSection(id) {
