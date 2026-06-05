@@ -350,9 +350,9 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 <nav>
   <div class="nav-logo">Mona Zaqqa</div>
   <ul class="nav-links">
-    <li><a href="#tabs-anchor" onclick="switchTab('desc')">Profil</a></li>
-    <li><a href="#tabs-anchor" onclick="switchTab('specs')">Skills</a></li>
-    <li><a href="#tabs-anchor" onclick="switchTab('reviews')">Zeugnisse</a></li>
+    <li><a href="#" onclick="switchTab('desc');scrollToSection('tabs-anchor');return false;">Profil</a></li>
+    <li><a href="#" onclick="switchTab('specs');scrollToSection('tabs-anchor');return false;">Skills</a></li>
+    <li><a href="#" onclick="switchTab('reviews');scrollToSection('tabs-anchor');return false;">Zeugnisse</a></li>
   </ul>
   <a href="#kontakt" class="nav-cta">Kontakt →</a>
 </nav>
@@ -387,7 +387,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
           <div class="star"></div><div class="star"></div><div class="star"></div>
           <div class="star"></div><div class="star"></div>
         </div>
-        <span class="stars-link" onclick="switchTab('reviews');document.getElementById('tabs-anchor').scrollIntoView({behavior:'smooth'})">6 verifizierte Zeugnisse ↓</span>
+        <span class="stars-link" onclick="switchTab('reviews');scrollToSection('tabs-anchor');">6 verifizierte Zeugnisse ↓</span>
       </div>
       <div class="sku">SKU: MZ-CON-2024 · Stack: Storyblok + Pimcore · Jg. 1994</div>
 
@@ -723,6 +723,23 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   document.getElementById('avail-text').textContent = txt;
   document.getElementById('avail-label').textContent = txt;
 })();
+
+// Offset-aware scroll: accounts for both sticky nav and sticky tabs
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const nav = document.querySelector('nav');
+  const tabs = document.querySelector('.tabs-sticky');
+  const navH = nav ? nav.getBoundingClientRect().height : 0;
+  // For tabs-anchor itself, only offset by nav height
+  // For anything else (like kontakt), offset by nav + tabs height
+  let offset = navH;
+  if (id !== 'tabs-anchor' && tabs) {
+    offset += tabs.getBoundingClientRect().height;
+  }
+  const top = el.getBoundingClientRect().top + window.scrollY - offset - 8;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
 
 // Set sticky tabs top dynamically based on nav height
 (function(){
