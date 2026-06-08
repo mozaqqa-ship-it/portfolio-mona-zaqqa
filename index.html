@@ -21,10 +21,10 @@ a{color:inherit;text-decoration:none;}
 
 /* CURSOR */
 * {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 18 L8 14 L11 21 L13 20 L10 13 L16 13 Z' fill='%23f2a7c3' stroke='%23464040' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;}
-a, button, .pill, .lang-btn, .tab-btn, .stars-link, .dl-card, .rev-card, .cert-card, [onclick] {cursor:pointer;}
+a, button, .pill, .lang-btn, .tab-btn, .stars-link, .dl-card, [onclick] {cursor:pointer;}
 
 /* TOP BAR */
-.top-bar{background:var(--black);padding:10px 48px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar{background:var(--black);padding:10px 72px;display:flex;justify-content:space-between;align-items:center;}
 .top-bar-left{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#b0a8a8;display:flex;gap:20px;align-items:center;}
 .sep{color:#666;}
 .top-bar-right{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);font-weight:700;display:flex;gap:10px;align-items:center;}
@@ -35,7 +35,7 @@ a, button, .pill, .lang-btn, .tab-btn, .stars-link, .dl-card, .rev-card, .cert-c
 
 /* NAV */
 nav{border-bottom:1.5px solid var(--black);background:var(--white);position:sticky;top:0;z-index:100;}
-.nav-inner{padding:18px 48px;display:flex;justify-content:space-between;align-items:center;}
+.nav-inner{padding:18px 72px;display:flex;justify-content:space-between;align-items:center;}
 .nav-logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:15px;color:var(--black);text-transform:uppercase;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;padding:10px 14px;margin:-10px -14px;display:inline-block;}
@@ -45,7 +45,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 
 /* BREADCRUMB */
 .breadcrumb{font-size:11px;letter-spacing:0.06em;color:var(--subtle);border-bottom:1px solid var(--border);}
-.breadcrumb-inner{padding:10px 48px;}
+.breadcrumb-inner{padding:10px 72px;}
 .breadcrumb span{color:var(--subtle);}
 
 /* HERO */
@@ -117,13 +117,13 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 
 /* TABS */
 .tabs-sticky{position:sticky;top:58px;z-index:90;background:var(--white);border-bottom:1.5px solid var(--black);margin-top:48px;}
-.tabs-sticky-inner{padding:0 18px;}
+.tabs-sticky-inner{padding:0 42px;}
 .tabs-nav{display:flex;width:100%;}
 .tab-btn{padding:14px 30px;background:none;border:none;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.15s;}
 
 .tab-btn:hover{color:var(--black);}
 .tab-btn.on{color:var(--black);background:var(--off);font-weight:700;}
-.tabs-outer{padding:0 48px;}
+.tabs-outer{padding:0 72px;}
 .tab-content{display:none;padding:52px 0 72px;}
 .tab-content.on{display:block;}
 
@@ -190,7 +190,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 
 /* DOWNLOADS SECTION */
 .downloads-section{border-top:1.5px solid var(--black);}
-.downloads-inner{padding:72px 48px;}
+.downloads-inner{padding:72px 72px;}
 @media(max-width:900px){.downloads-inner{padding:52px 24px;}}
 .downloads-sub{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.75;}
 .dl-grid{display:flex;gap:16px;flex-wrap:wrap;}
@@ -208,7 +208,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .dl-card:hover .dl-meta{color:var(--yellow);}
 
 /* KONTAKT */
-.kontakt-sec{padding:72px 48px;text-align:center;border-top:1.5px solid var(--black);}
+.kontakt-sec{padding:72px 72px;text-align:center;border-top:1.5px solid var(--black);}
 .k-title{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,64px);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;}
 .k-title em{font-style:italic;font-weight:400;color:var(--pink);}
 .k-sub{font-size:14px;color:var(--muted);margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.75;}
@@ -235,7 +235,7 @@ body.rtl .trust{flex-direction:row-reverse;}
 body.rtl .avail-row{flex-direction:row-reverse;}
 
 /* FOOTER */
-footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .f-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--yellow);font-style:italic;}
 .f-copy{font-size:11px;color:#888;letter-spacing:0.06em;}
 
@@ -651,10 +651,6 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <footer>
   <div class="f-logo">Toujours Contente</div>
-  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
-    <a href="mailto:mozaqqa@gmail.com" style="font-size:11px;color:#888;letter-spacing:0.06em;">mozaqqa@gmail.com</a>
-    <a href="tel:015738091683" style="font-size:11px;color:#888;letter-spacing:0.06em;">015738091683</a>
-  </div>
   <div class="f-copy">mozaqqa@gmail.com · 015738091683</div>
 </footer>
 
@@ -930,6 +926,14 @@ function switchTab(name) {
     document.getElementById('tab-'+n).classList.toggle('on', n===name);
     document.getElementById('btn-'+n).classList.toggle('on', n===name);
   });
+  // Scroll to top of tabs when switching
+  const tabsAnchor = document.getElementById('tabs-anchor');
+  if (tabsAnchor) {
+    const nav = document.querySelector('nav');
+    const navH = nav ? nav.getBoundingClientRect().height : 0;
+    const top = tabsAnchor.getBoundingClientRect().top + window.scrollY - navH - 8;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 }
 
 // Scroll fade-in
