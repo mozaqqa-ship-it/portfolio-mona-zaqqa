@@ -31,7 +31,8 @@ body, a, button, .pill, * {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://w
 .lang-sep{color:#555;}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1.5px solid var(--black);background:var(--white);position:sticky;top:0;z-index:100;}
+nav{border-bottom:1.5px solid var(--black);background:var(--white);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1160px;margin:0 auto;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;}
 .nav-logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:15px;color:var(--black);text-transform:uppercase;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
@@ -40,7 +41,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .nav-cta:hover{background:var(--pink);color:var(--black);}
 
 /* BREADCRUMB */
-.breadcrumb{padding:10px 48px;font-size:11px;letter-spacing:0.06em;color:var(--subtle);border-bottom:1px solid var(--border);}
+.breadcrumb{font-size:11px;letter-spacing:0.06em;color:var(--subtle);border-bottom:1px solid var(--border);}
+.breadcrumb-inner{max-width:1160px;margin:0 auto;padding:10px 48px;}
 .breadcrumb span{color:var(--subtle);}
 
 /* HERO */
@@ -244,7 +246,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .mobile-hide{display:none;}
   .eyebrow{display:none;}
   .hero-right::before{display:none;}
-  nav{padding:14px 20px;}
+  .nav-inner{padding:14px 20px;}
   .nav-links{display:none;}
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-img{min-height:auto;padding:20px;border-right:none;border-bottom:1.5px solid var(--black);border-radius:0;}
@@ -266,7 +268,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .desc-grid{grid-template-columns:1fr;gap:32px;}
   .kontakt-sec{padding:56px 24px;}
   footer{padding:20px 24px;}
-  .breadcrumb{padding:10px 20px;}
+  .breadcrumb-inner{padding:10px 20px;}
 }
 </style>
 </head>
@@ -287,18 +289,20 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 </div>
 
 <nav>
+<div class="nav-inner">
   <div class="nav-logo">Toujours Contente</div>
   <ul class="nav-links">
-    <li><a href="javascript:void(0)" onclick="scrollToSection('ueber');" data-i18n="nav-profile">Profil</a></li>
+    <li><a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'});" data-i18n="nav-profile">Profil</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('tabs-anchor');" data-i18n="nav-exp">Erfahrung</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('downloads');" data-i18n="nav-downloads">Downloads</a></li>
   </ul>
   <a href="mailto:mozaqqa@gmail.com" class="nav-cta" data-i18n="nav-contact">Kontakt →</a>
+</div>
 </nav>
 
-<div class="breadcrumb">
+<div class="breadcrumb"><div class="breadcrumb-inner">
   <span data-i18n="bc1">Talent Pool</span> / <span data-i18n="bc2">Content & Marketing</span> / <span data-i18n="bc3">E-Commerce</span> / Mona Zaqqa
-</div>
+</div></div>
 
 <div class="hero">
   <div class="hero-img">
