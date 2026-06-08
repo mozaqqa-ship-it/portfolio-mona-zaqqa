@@ -45,14 +45,17 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 
 /* HERO */
 .hero{display:grid;grid-template-columns:38% 1fr;border-bottom:1.5px solid var(--black);}
-.hero-img{position:relative;border-right:1.5px solid var(--black);background:var(--off);border-radius:16px 0 0 16px;display:flex;align-items:flex-start;justify-content:center;padding:24px;}
-.hero-img img{width:100%;object-fit:cover;object-position:center 20%;display:block;position:relative;border-radius:8px;box-shadow:6px 6px 0 var(--black);z-index:3;}
+.hero-img{position:relative;border-right:1.5px solid var(--black);background:var(--off);border-radius:16px 0 0 16px;display:flex;align-items:flex-start;justify-content:center;padding:32px 28px;}
+
 .deco{position:absolute;pointer-events:none;z-index:1;top:0;left:0;}
 .deco-y{width:100px;height:100px;border-radius:50%;background:var(--yellow);opacity:0.5;top:16px;right:16px;left:auto;z-index:2;}
 .deco-p{width:70px;height:70px;border-radius:50%;background:var(--pink);opacity:0.35;bottom:40px;left:20px;top:auto;z-index:1;}
+.photo-wrap .sticker{position:absolute;bottom:-14px;right:-14px;z-index:10;}
 .sticker{position:absolute;bottom:12px;right:12px;z-index:10;background:var(--pink);color:var(--black);border:2px solid var(--black);padding:10px 18px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.06em;transform:rotate(-3deg);white-space:nowrap;box-shadow:3px 3px 0 var(--black);transition:transform 0.3s ease;}
 .sticker:hover{transform:rotate(3deg) scale(1.04);}
-.avail-badge{position:absolute;top:12px;left:12px;z-index:10;background:var(--white);border:1.5px solid var(--black);padding:9px 16px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;box-shadow:2px 2px 0 var(--black);}
+.photo-wrap{position:relative;width:100%;}
+.photo-wrap img{width:100%;display:block;border-radius:8px;box-shadow:6px 6px 0 var(--black);}
+.photo-wrap .avail-badge{position:absolute;top:12px;left:12px;z-index:10;background:var(--white);border:1.5px solid var(--black);padding:9px 16px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;box-shadow:2px 2px 0 var(--black);}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;flex-shrink:0;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.5);}}
 
@@ -295,14 +298,14 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 
 <div class="hero">
   <div class="hero-img">
-    <div class="deco deco-y"></div>
-    <div class="deco deco-p"></div>
-    <img src="foto.jpeg" alt="Mona Zaqqa" onerror="this.style.display='none'">
-    <div class="avail-badge">
-      <div class="pulse-dot"></div>
-      <span id="avail-text">Verfügbar ab Oktober 2026</span>
+    <div class="photo-wrap">
+      <img src="foto.jpeg" alt="Mona Zaqqa" onerror="this.style.display='none'">
+      <div class="avail-badge">
+        <div class="pulse-dot"></div>
+        <span id="avail-text">Verfügbar ab Oktober 2026</span>
+      </div>
+      <div class="sticker" data-i18n="sticker">★★★★★ &nbsp;6 Zeugnisse</div>
     </div>
-    <div class="sticker" data-i18n="sticker">★★★★★ &nbsp;6 Zeugnisse</div>
   </div>
 
   <div class="hero-right">
