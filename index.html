@@ -48,7 +48,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .hero-img{position:relative;overflow:hidden;border-right:1.5px solid var(--black);background:#e8e4e0;border-radius:16px 0 0 16px;}
 .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;position:absolute;inset:0;}
 .deco{position:absolute;pointer-events:none;}
-.hero-img::after{content:'';position:absolute;inset:0;border-radius:16px 0 0 16px;border:6px solid var(--black);z-index:4;pointer-events:none;}
 .deco-y{width:160px;height:160px;border-radius:50%;background:var(--yellow);opacity:0.55;top:-45px;right:-45px;z-index:1;}
 .deco-p{width:90px;height:90px;border-radius:50%;background:var(--pink);opacity:0.4;bottom:90px;left:16px;z-index:1;}
 .sticker{position:absolute;bottom:28px;right:28px;z-index:10;background:var(--pink);color:var(--black);border:2px solid var(--black);padding:10px 18px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.06em;transform:rotate(-3deg);white-space:nowrap;box-shadow:3px 3px 0 var(--black);transition:transform 0.3s ease;}
@@ -94,9 +93,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .tchk{color:var(--green);}
 
 /* COLLAGE STRIP */
-.collage-strip{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;border-bottom:1.5px solid var(--black);}
+.collage-strip{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-bottom:1.5px solid var(--black);min-height:320px;}
 .c-cell{padding:30px 32px;border-right:1px solid var(--black);display:flex;flex-direction:column;justify-content:center;}
-.c-cell:last-child{border-right:none;}
+.c-cell:nth-child(2){border-right:none;}.c-cell:nth-child(3){border-top:1px solid var(--black);}.c-cell:nth-child(4){border-top:1px solid var(--black);border-right:none;}
 .c-cell.yellow{background:var(--yellow);}
 .c-cell.pink{background:var(--pink);}
 .c-cell.dark{background:var(--black);}
@@ -180,6 +179,25 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .rev-body{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:1.72;color:var(--ink);}
 .rev-meta{font-size:11px;color:var(--subtle);letter-spacing:0.06em;margin-top:12px;text-transform:uppercase;}
 
+/* DOWNLOADS */
+.downloads-wrap{padding:52px 0 72px;}
+.downloads-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--black);margin-bottom:10px;}
+.downloads-sub{font-size:14px;color:var(--muted);margin-bottom:36px;line-height:1.75;}
+.dl-grid{display:flex;gap:16px;flex-wrap:wrap;}
+.dl-card{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:180px;height:180px;
+  border:1.5px solid var(--black);background:var(--white);
+  text-decoration:none;color:var(--black);
+  transition:all 0.2s;gap:8px;
+  padding:24px;text-align:center;
+}
+.dl-card:hover{background:var(--black);color:var(--yellow);border-color:var(--black);}
+.dl-icon{font-size:32px;font-family:'Playfair Display',serif;line-height:1;}
+.dl-name{font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+.dl-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--subtle);letter-spacing:0.08em;text-transform:uppercase;}
+.dl-card:hover .dl-meta{color:var(--yellow);}
+
 /* KONTAKT */
 .kontakt-sec{max-width:1160px;margin:0 auto;padding:72px 48px;text-align:center;border-top:1.5px solid var(--black);}
 .k-title{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,64px);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;}
@@ -224,12 +242,10 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   .nav-links{display:none;}
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-img{min-height:440px;border-right:none;border-bottom:1.5px solid var(--black);border-radius:0;}
-  .hero-img::after{border-radius:0;}
-  .hero-img img{border-radius:0;}
   .avail-badge{padding:6px 12px;font-size:10px;}
   .avail-badge .pulse-dot{width:6px;height:6px;}
   .hero-right{padding:28px 24px;}
-  .collage-strip{grid-template-columns:1fr 1fr;}
+  .collage-strip{grid-template-columns:1fr 1fr;min-height:auto;}
   .c-big{font-size:26px;}
   .c-stat{font-size:28px;}
   .tabs-sticky{top:48px;}
@@ -375,6 +391,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       <button class="tab-btn on" id="btn-desc" onclick="switchTab('desc')" data-i18n="tab-desc">Produktbeschreibung</button>
       <button class="tab-btn" id="btn-specs" onclick="switchTab('specs')" data-i18n="tab-specs">Technische Daten</button>
       <button class="tab-btn" id="btn-reviews" onclick="switchTab('reviews')" data-i18n="tab-reviews">Kundenbewertungen (6)</button>
+      <button class="tab-btn" id="btn-downloads" onclick="switchTab('downloads')" data-i18n="tab-downloads">Downloads</button>
     </div>
   </div>
 </div>
@@ -589,6 +606,20 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
       <div class="rev-meta" data-i18n="rev6-meta">Praktikantin Verwaltung & Projektförderung · Jan.–Aug. 2021</div>
     </div>
   </div>
+
+  <div class="tab-content" id="tab-downloads">
+    <div class="downloads-wrap">
+      <h3 class="downloads-title" data-i18n="dl-title">Downloads</h3>
+      <p class="downloads-sub" data-i18n="dl-sub">Alle Unterlagen als PDF zum direkten Download.</p>
+      <div class="dl-grid">
+        <a href="Bewerbungsunterlagen_Mona_Zaqqa.pdf" download class="dl-card">
+          <div class="dl-icon">↓</div>
+          <div class="dl-name" data-i18n="dl-cv">Lebenslauf</div>
+          <div class="dl-meta">PDF</div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="kontakt-sec" id="kontakt">
@@ -640,7 +671,7 @@ const T = {
     'trust1':'Vollständige Unterlagen','trust2':'','trust3':'Bereit für langfristige Zusammenarbeit',
     'collage-big':'Qualität,<br>die','collage-all':'überzeugt.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
     'collage-3x':'Sprachen auf Produktionsniveau','collage-15':'MA-Note Universität Köln','collage-6':'Zeugnisse & Empfehlungen',
-    'tab-desc':'Produktbeschreibung','tab-specs':'Technische Daten','tab-reviews':'Kundenbewertungen (6)',
+    'tab-desc':'Produktbeschreibung','tab-specs':'Technische Daten','tab-reviews':'Kundenbewertungen (6)','tab-downloads':'Downloads','dl-title':'Downloads','dl-sub':'Alle Unterlagen als PDF zum direkten Download.','dl-cv':'Lebenslauf',
     'desc-title':'Über dieses Produkt',
     'desc-p1':'Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — produktiv, nicht nur theoretisch. Sie pflegt Produktdaten in Storyblok und Pimcore, erstellt SEO-optimierten Content für Shop, Website und Blog, und denkt in Redaktionsplänen. Als zertifizierter Usability Manager denkt sie in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung.',
     'desc-p2':'Den gesamten E-Commerce-Content-Stack aus einer Hand: Produktdatenpflege im PIM, SEO-Texte, Content-Strategie und Redaktionsplanung — ohne Einarbeitungszeit bei Storyblok oder Pimcore. Drei Sprachen sofort einsatzbereit. Akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).',
@@ -697,7 +728,7 @@ const T = {
     'trust1':'Full documentation available','trust2':'','trust3':'Open to long-term collaboration',
     'collage-big':'Quality you<br>can','collage-all':'count on.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
     'collage-3x':'Languages at production level','collage-15':'MA grade · University of Cologne','collage-6':'References & Recommendations',
-    'tab-desc':'Product Description','tab-specs':'Specifications','tab-reviews':'Customer Reviews (6)',
+    'tab-desc':'Product Description','tab-specs':'Specifications','tab-reviews':'Customer Reviews (6)','tab-downloads':'Downloads','dl-title':'Downloads','dl-sub':'All documents available as PDF for direct download.','dl-cv':'CV / Resume',
     'desc-title':'About this Product',
     'desc-p1':'Mona Zaqqa combines editorial precision with a hands-on understanding of modern e-commerce stacks — in practice, not just in theory. She manages product data in Storyblok and Pimcore, creates SEO-optimised content for shops, websites and blogs, and thinks in editorial plans. As a certified Usability Manager, she consistently focuses on user guidance and customer journey — every piece of content becomes an experience.',
     'desc-p2':'The complete e-commerce content stack in one person: product data management in PIM, SEO copy, content strategy and editorial planning — no onboarding time needed for Storyblok or Pimcore. Three languages ready to go. Academically trained eye for structure and quality (MA, grade 1.5).',
@@ -754,7 +785,7 @@ const T = {
     'trust1':'وثائق كاملة متوفرة','trust2':'','trust3':'مستعدة للتعاون طويل الأمد',
     'collage-big':'جودة<br>تُقنع','collage-all':'دائماً.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
     'collage-3x':'لغات على مستوى احترافي','collage-15':'تقدير الماجستير · جامعة كولونيا','collage-6':'شهادات وتوصيات',
-    'tab-desc':'وصف المنتج','tab-specs':'المواصفات التقنية','tab-reviews':'تقييمات العملاء (٦)',
+    'tab-desc':'وصف المنتج','tab-specs':'المواصفات التقنية','tab-reviews':'تقييمات العملاء (٦)','tab-downloads':'تنزيلات','dl-title':'تنزيلات','dl-sub':'جميع الوثائق متاحة كـ PDF للتنزيل المباشر.','dl-cv':'السيرة الذاتية',
     'desc-title':'عن هاد المنتج',
     'desc-p1':'منى زقة بتجمع الدقة التحريرية مع الفهم التقني لأنظمة التجارة الإلكترونية الحديثة — وهاد مش بس نظري، هاد شغل فعلي. هي بتشتغل على بيانات المنتجات في Storyblok وPimcore، وبتكتب محتوى محسّن لمحركات البحث للمتجر والموقع والمدونة. كمدير Usability معتمد، هي دايماً بتفكر بـ Customer Journey — كل نص بيصير تجربة.',
     'desc-p2':'المنظومة الكاملة لمحتوى التجارة الإلكترونية بإيد واحدة: إدارة بيانات المنتجات في PIM، نصوص SEO، استراتيجية المحتوى والتخطيط التحريري — وما في حاجة لفترة تدريب على Storyblok أو Pimcore. ثلاث لغات جاهزة على طول. نظرة أكاديمية للهيكلة والجودة (ماجستير، تقدير ١٫٥).',
@@ -872,7 +903,7 @@ function scrollToSection(id) {
 })();
 
 function switchTab(name) {
-  ['desc','specs','reviews'].forEach(n => {
+  ['desc','specs','reviews','downloads'].forEach(n => {
     document.getElementById('tab-'+n).classList.toggle('on', n===name);
     document.getElementById('btn-'+n).classList.toggle('on', n===name);
   });
