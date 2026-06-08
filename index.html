@@ -289,9 +289,8 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 <nav>
   <div class="nav-logo">Toujours Contente</div>
   <ul class="nav-links">
-    <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');" data-i18n="nav-profile">Profil</a></li>
-    <li><a href="javascript:void(0)" onclick="switchTab('specs');scrollToSection('tabs-anchor');" data-i18n="nav-skills">Skills</a></li>
-    <li><a href="javascript:void(0)" onclick="switchTab('reviews');scrollToSection('tabs-anchor');" data-i18n="nav-reviews">Zeugnisse</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('ueber');" data-i18n="nav-profile">Profil</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToSection('tabs-anchor');" data-i18n="nav-exp">Erfahrung</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('downloads');" data-i18n="nav-downloads">Downloads</a></li>
   </ul>
   <a href="mailto:mozaqqa@gmail.com" class="nav-cta" data-i18n="nav-contact">Kontakt →</a>
@@ -407,6 +406,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
 <div class="tabs-outer">
 
   <div class="tab-content on" id="tab-desc">
+  <div id="ueber"></div>
     <div class="desc-single">
       <h3 data-i18n="desc-title">Über dieses Produkt</h3>
       <p data-i18n="desc-p1">Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — produktiv, nicht nur theoretisch. Sie pflegt Produktdaten in Storyblok und Pimcore, erstellt SEO-optimierten Content für Shop, Website und Blog, und denkt in Redaktionsplänen. Als zertifizierter Usability Manager denkt sie in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung.</p>
@@ -667,7 +667,7 @@ const T = {
   de: {
     'topbar-role':'Content Manager · E-Commerce',
     'topbar-location':'Köln / Remote',
-    'nav-profile':'Profil','nav-skills':'Skills','nav-reviews':'Zeugnisse','nav-downloads':'Downloads','nav-contact':'Kontakt →',
+    'nav-profile':'Profil','nav-exp':'Erfahrung','nav-downloads':'Downloads','nav-contact':'Kontakt →',
     'bc1':'Talent Pool','bc2':'Content & Marketing','bc3':'E-Commerce',
     'sticker':'★★★★★  6 Zeugnisse',
     'eyebrow':'Content Manager · E-Commerce · Köln / Remote',
@@ -724,7 +724,7 @@ const T = {
   en: {
     'topbar-role':'Content Manager · E-Commerce',
     'topbar-location':'Cologne / Remote',
-    'nav-profile':'Profile','nav-skills':'Skills','nav-reviews':'References','nav-downloads':'Downloads','nav-contact':'Contact →',
+    'nav-profile':'Profile','nav-exp':'Experience','nav-downloads':'Downloads','nav-contact':'Contact →',
     'bc1':'Talent Pool','bc2':'Content & Marketing','bc3':'E-Commerce',
     'sticker':'★★★★★  6 References',
     'eyebrow':'Content Manager · E-Commerce · Cologne / Remote',
@@ -781,7 +781,7 @@ const T = {
   ar: {
     'topbar-role':'مدير محتوى · تجارة إلكترونية',
     'topbar-location':'كولونيا / عن بُعد',
-    'nav-profile':'الملف','nav-skills':'المهارات','nav-reviews':'الشهادات','nav-downloads':'تنزيلات','nav-contact':'تواصلي ←',
+    'nav-profile':'الملف','nav-exp':'الخبرة','nav-downloads':'تنزيلات','nav-contact':'تواصلي ←',
     'bc1':'مجمع المواهب','bc2':'المحتوى والتسويق','bc3':'التجارة الإلكترونية',
     'sticker':'★★★★★  ٦ شهادات',
     'eyebrow':'مدير محتوى · تجارة إلكترونية · كولونيا / عن بُعد',
