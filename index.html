@@ -116,10 +116,10 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 
 /* TABS */
 .tabs-sticky{position:sticky;top:58px;z-index:90;background:var(--white);border-bottom:1.5px solid var(--black);margin-top:48px;}
-.tabs-sticky-inner{padding:0 48px;}
+.tabs-sticky-inner{padding:0 18px;}
 .tabs-nav{display:flex;width:100%;}
 .tab-btn{padding:14px 30px;background:none;border:none;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.15s;}
-.tab-btn:first-child{padding-left:0 !important;}
+
 .tab-btn:hover{color:var(--black);}
 .tab-btn.on{color:var(--black);background:var(--off);font-weight:700;}
 .tabs-outer{padding:0 48px;}
@@ -293,7 +293,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   <div class="nav-logo">Toujours Contente</div>
   <ul class="nav-links">
     <li><a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'});" data-i18n="nav-profile">Profil</a></li>
-    <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');setTimeout(function(){var el=document.getElementById('erfahrung-tl');if(el)el.scrollIntoView({behavior:'smooth'});},400);" data-i18n="nav-exp">Erfahrung</a></li>
+    <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');setTimeout(function(){scrollToSection('erfahrung-tl');},400);" data-i18n="nav-exp">Erfahrung</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('downloads');" data-i18n="nav-downloads">Downloads</a></li>
   </ul>
   <a href="mailto:mozaqqa@gmail.com" class="nav-cta" data-i18n="nav-contact">Kontakt →</a>
@@ -452,13 +452,11 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     </div>
 
     <div class="tl-item">
-      <div>
-        <div class="tl-date" data-i18n="tl4-date">ca. 2023 · 8 Monate</div>
-        <div class="tl-mini-quote"><p data-i18n="tl4-quote">„Very capable writer — real asset."</p><cite>— Media Matters Intl., 2023</cite></div>
-      </div>
+      <div><div class="tl-date" data-i18n="tl4-date">ca. 2023 · 8 Monate</div></div>
       <div>
         <div class="tl-role" data-i18n="tl4-role">Freelance Content Writer / Media Analyst</div>
         <div class="tl-co">Media Matters International LTD · Remote</div>
+        <div class="tl-mini-quote"><p data-i18n="tl4-quote">„Very capable writer — real asset."</p><cite>— Media Matters Intl., 2023</cite></div>
         <div class="tl-desc" data-i18n="tl4-desc">Summary Writing für internationale Kunden auf Englisch und Deutsch. Branchenübergreifend, internationale Zusammenarbeit.</div>
         <div class="tl-tags"><span class="tl-tag">EN + DE</span><span class="tl-tag" data-i18n="tag-writing">Summary Writing</span><span class="tl-tag" data-i18n="tag-media">Medienanalyse</span></div>
       </div>
@@ -894,15 +892,25 @@ function setLang(lang) {
 updateAvailDate('de');
 
 // Offset-aware scroll
+function getOffset() {
+  const nav = document.querySelector('nav');
+  const tabs = document.querySelector('.tabs-sticky');
+  const navH = nav ? nav.getBoundingClientRect().height : 0;
+  const tabsH = tabs ? tabs.getBoundingClientRect().height : 0;
+  return navH + tabsH + 16;
+}
+
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const nav = document.querySelector('nav');
-  const tabs = document.querySelector('.tabs-sticky');
   const navH = nav ? nav.getBoundingClientRect().height : 0;
-  let offset = navH;
-  if (id !== 'tabs-anchor' && tabs) offset += tabs.getBoundingClientRect().height;
-  const top = el.getBoundingClientRect().top + window.scrollY - offset - 8;
+  // For tabs-anchor itself: only offset by nav height (tabs will stick below)
+  // For everything else: offset by nav + tabs
+  const offset = id === 'tabs-anchor'
+    ? navH + 8
+    : getOffset();
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
