@@ -18,7 +18,8 @@ body{background:var(--white);color:var(--ink);font-family:'Space Mono',monospace
 a{color:inherit;text-decoration:none;}
 
 /* CURSOR */
-body, a, button, .pill, * {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 18 L8 14 L11 21 L13 20 L10 13 L16 13 Z' fill='%23f2a7c3' stroke='%23464040' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;}
+* {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 18 L8 14 L11 21 L13 20 L10 13 L16 13 Z' fill='%23f2a7c3' stroke='%23464040' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;}
+a, button, .pill, .pill.on, .lang-btn, .tab-btn, .stars-link, .dl-card, .rev-card, .cert-card, .sticker, [onclick] {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M8.5 2C8.5 2 8.5 10 8.5 11.5C7.8 11 7 10.8 6.2 11C5.2 11.3 4.5 12.2 4.5 13.2L4.5 15C4.5 18.3 7.2 21 10.5 21L13 21C15.8 21 18 18.8 18 16L18 12C18 11.2 17.3 10.5 16.5 10.5C16.1 10.5 15.8 10.6 15.5 10.9C15.3 10.4 14.8 10 14.2 10C13.8 10 13.4 10.2 13.1 10.4C12.8 9.9 12.3 9.5 11.5 9.5C11.2 9.5 11 9.6 10.8 9.7L10.8 2C10.8 1.2 10.1 0.5 9.2 0.5C8.8 0.5 8.5 1.2 8.5 2Z' fill='%23f2a7c3' stroke='%23464040' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 8 0, pointer;}
 
 /* TOP BAR */
 .top-bar{background:var(--black);padding:10px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -35,7 +36,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .nav-inner{padding:18px 48px;display:flex;justify-content:space-between;align-items:center;}
 .nav-logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:15px;color:var(--black);text-transform:uppercase;}
 .nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;padding:10px 14px;margin:-10px -14px;display:inline-block;}
 .nav-links a:hover{color:var(--black);}
 .nav-cta{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:var(--black);color:var(--yellow);padding:11px 24px;border:none;cursor:pointer;font-family:'Space Mono',monospace;font-weight:700;transition:background 0.2s;}
 .nav-cta:hover{background:var(--pink);color:var(--black);}
@@ -85,7 +86,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .pill{padding:7px 16px;border:1.5px solid var(--border);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;cursor:pointer;background:transparent;color:var(--ink);transition:all 0.15s;}
 .pill:hover{border-color:var(--black);}
 .pill.on{background:var(--black);color:var(--yellow);border-color:var(--black);}
-.hl-list{margin-bottom:22px;background:linear-gradient(135deg, #fff 60%, #fdf0f5 100%);padding:8px 14px;border:1px solid var(--border);}
+.hl-list{margin-bottom:22px;background:var(--white);padding:8px 14px;border:1px solid var(--border);}
 .hl-row{display:flex;gap:13px;align-items:flex-start;padding:5px 0;font-size:13px;line-height:1.5;color:var(--ink);}
 .hl-n{font-family:'Space Mono',monospace;font-size:13px;color:var(--pink);min-width:18px;flex-shrink:0;line-height:1.6;}
 .btns{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
@@ -117,6 +118,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .tabs-sticky-inner{padding:0 48px;}
 .tabs-nav{display:flex;width:100%;}
 .tab-btn{padding:14px 30px;background:none;border:none;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.tab-btn:first-child{padding-left:0;}
 .tab-btn:hover{color:var(--black);}
 .tab-btn.on{color:var(--black);background:var(--off);font-weight:700;}
 .tabs-outer{padding:0 48px;}
@@ -131,7 +133,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .tl-item{display:grid;grid-template-columns:190px 1fr;gap:36px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start;}
 .tl-item:last-child{border-bottom:none;}
 .tl-date{font-size:12px;color:var(--muted);letter-spacing:0.04em;line-height:1.7;margin-bottom:6px;}
-.tl-mini-quote{margin-top:14px;padding:12px 14px;background:var(--pink-light);}
+.tl-mini-quote{margin-top:10px;margin-bottom:12px;padding:12px 14px;background:var(--pink-light);}
 .tl-mini-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:5px;}
 .tl-mini-quote cite{font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);}
 .tl-role{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--black);margin-bottom:3px;}
@@ -364,7 +366,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     <div>
       <div class="btns">
         <a href="mailto:mozaqqa@gmail.com" class="btn-main" data-i18n="btn-cart">In den Warenkorb →</a>
-        <a href="https://www.linkedin.com/in/mona-zaqqa/" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
+        <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
       </div>
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust1">Vollständige Unterlagen</span></div>
@@ -427,26 +429,22 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     </div>
 
     <div class="tl-item">
-      <div>
-        <div class="tl-date" data-i18n="tl2-date">Jun. – Nov. 2024</div>
-        <div class="tl-mini-quote"><p data-i18n="tl2-quote">„Übertraf stets die vereinbarten Ziele."</p><cite>— WORLD INSIGHT, 2024</cite></div>
-      </div>
+      <div><div class="tl-date" data-i18n="tl2-date">Jun. – Nov. 2024</div></div>
       <div>
         <div class="tl-role" data-i18n="tl2-role">Assistant Marketing Manager</div>
         <div class="tl-co">WORLD INSIGHT Erlebnisreisen GmbH · Köln</div>
+        <div class="tl-mini-quote"><p data-i18n="tl2-quote">„Übertraf stets die vereinbarten Ziele."</p><cite>— WORLD INSIGHT, 2024</cite></div>
         <div class="tl-desc" data-i18n="tl2-desc">Redaktion Online-Reisemagazin, Newsletter und Social-Media-Kanäle. Performance Marketing, SEO, Mediaplanung und Kooperationen. Planung und Durchführung von Messen und Events.</div>
         <div class="tl-tags"><span class="tl-tag pk" data-i18n="tag-magazine">Online-Magazin</span><span class="tl-tag pk">Newsletter</span><span class="tl-tag pk">Social Media</span><span class="tl-tag">SEO</span><span class="tl-tag" data-i18n="tag-events">Events</span></div>
       </div>
     </div>
 
     <div class="tl-item">
-      <div>
-        <div class="tl-date" data-i18n="tl3-date">Feb. – Apr. 2024</div>
-        <div class="tl-mini-quote"><p data-i18n="tl3-quote">„Sehr gewissenhaft, selbständig und zuverlässig erledigt."</p><cite>— GRENZGANG, 2024</cite></div>
-      </div>
+      <div><div class="tl-date" data-i18n="tl3-date">Feb. – Apr. 2024</div></div>
       <div>
         <div class="tl-role" data-i18n="tl3-role">Praktikantin Event & Social Media</div>
         <div class="tl-co">GRENZGANG Veranstaltungen · Köln</div>
+        <div class="tl-mini-quote"><p data-i18n="tl3-quote">„Sehr gewissenhaft, selbständig und zuverlässig erledigt."</p><cite>— GRENZGANG, 2024</cite></div>
         <div class="tl-desc" data-i18n="tl3-desc">Social-Media-Content, Reels und Pressetexte. Konzeption und Umsetzung von Branding-Maßnahmen für Instagram. Veranstaltungsbegleitung.</div>
         <div class="tl-tags"><span class="tl-tag bl">Reels</span><span class="tl-tag bl">Branding</span><span class="tl-tag">Canva</span><span class="tl-tag" data-i18n="tag-press">Pressetexte</span></div>
       </div>
@@ -466,13 +464,11 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
     </div>
 
     <div class="tl-item">
-      <div>
-        <div class="tl-date" data-i18n="tl5-date">Apr. 2017 – Jan. 2022</div>
-        <div class="tl-mini-quote"><p data-i18n="tl5-quote">„Arbeitsergebnisse von sehr guter Qualität — auch unter Zeitdruck."</p><cite>— CineVision / WOKI, 2022</cite></div>
-      </div>
+      <div><div class="tl-date" data-i18n="tl5-date">Apr. 2017 – Jan. 2022</div></div>
       <div>
         <div class="tl-role" data-i18n="tl5-role">Mitarbeiterin & Schichtleitung</div>
         <div class="tl-co">CineVision Filmtheater GmbH (WOKI) · Bonn</div>
+        <div class="tl-mini-quote"><p data-i18n="tl5-quote">„Arbeitsergebnisse von sehr guter Qualität — auch unter Zeitdruck."</p><cite>— CineVision / WOKI, 2022</cite></div>
         <div class="tl-desc" data-i18n="tl5-desc">Teamleitung bis 6 Personen, Kassenführung, Sonderveranstaltungen. Parallel zum Studium.</div>
         <div class="tl-tags"><span class="tl-tag" data-i18n="tag-team">Teamleitung</span><span class="tl-tag" data-i18n="tag-events2">Veranstaltungen</span></div>
       </div>
@@ -644,7 +640,7 @@ footer{background:var(--black);color:var(--white);padding:22px 48px;display:flex
   <p class="k-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
   <div class="k-btns">
     <a href="mailto:mozaqqa@gmail.com" class="kbm" data-i18n="contact-email">E-Mail schreiben</a>
-    <a href="https://www.linkedin.com/in/mona-zaqqa/" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
+    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
   </div>
   <div class="k-details">
     <a href="mailto:mozaqqa@gmail.com">mozaqqa@gmail.com</a>
