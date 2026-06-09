@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none;}
 
 /* CURSOR */
 * {cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 18 L8 14 L11 21 L13 20 L10 13 L16 13 Z' fill='%23f2a7c3' stroke='%23464040' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;}
-a, button, .pill, .lang-btn, .tab-btn, .stars-link, .dl-card, [onclick] {cursor:pointer;}
+a, button, .pill, .lang-btn, .tab-btn, .stars-link, .dl-card, .f-icon-link, .tb-icon, .popup-link, [onclick] {cursor:pointer;}
 
 /* TOP BAR */
 .top-bar{background:var(--black);padding:10px 72px;display:flex;justify-content:space-between;align-items:center;}
@@ -196,14 +196,14 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .dl-grid{display:flex;gap:16px;flex-wrap:wrap;}
 .dl-card{
   display:flex;flex-direction:row;align-items:center;
-  gap:16px;padding:18px 24px;
+  gap:14px;padding:16px 20px;
   border:1.5px solid var(--black);background:var(--white);
   text-decoration:none;color:var(--black);
-  transition:all 0.2s;min-width:240px;
+  transition:all 0.2s;width:260px;flex-shrink:0;
 }
 .dl-card:hover{background:var(--black);color:var(--yellow);border-color:var(--black);}
 .dl-icon{font-size:22px;font-family:'Playfair Display',serif;line-height:1;flex-shrink:0;}
-.dl-name{font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+.dl-name{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:normal;line-height:1.4;}
 .dl-meta{font-family:'Space Mono',monospace;font-size:10px;color:var(--subtle);letter-spacing:0.08em;text-transform:uppercase;margin-top:3px;}
 .dl-card:hover .dl-meta{color:var(--yellow);}
 
@@ -237,13 +237,55 @@ body.rtl .avail-row{flex-direction:row-reverse;}
 /* FOOTER */
 .tb-icon{color:#b0a8a8;display:flex;align-items:center;transition:color 0.2s;}
 .tb-icon:hover{color:var(--pink);}
-.f-icons{display:flex;gap:18px;align-items:center;}
-.f-icon-link{color:#888;display:flex;align-items:center;transition:color 0.2s;}
-.f-icon-link:hover{color:var(--pink);}
+.f-icons{display:flex;gap:8px;align-items:center;}
+.f-icon-link{color:#888;display:flex;align-items:center;justify-content:center;padding:10px;transition:color 0.2s, background 0.2s;border-radius:4px;}
+.f-icon-link svg, .tb-icon svg, .popup-link svg {pointer-events:none;}
+.f-icon-link:hover{color:var(--pink);background:rgba(255,255,255,0.08);}
+
+
+/* KONTAKT POPUP */
+.popup-overlay{
+  display:none;position:fixed;inset:0;background:rgba(70,64,64,0.6);
+  z-index:9999;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.popup-overlay.open{display:flex;}
+.popup-box{
+  background:var(--white);border:1.5px solid var(--black);
+  padding:48px;max-width:420px;width:90%;position:relative;
+  box-shadow:8px 8px 0 var(--black);
+  animation:popIn 0.2s ease;
+}
+@keyframes popIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.popup-close{
+  position:absolute;top:16px;right:20px;
+  background:none;border:none;font-size:20px;
+  color:var(--muted);line-height:1;padding:4px;
+}
+.popup-close:hover{color:var(--black);}
+.popup-title{
+  font-family:'Playfair Display',serif;font-size:28px;
+  font-weight:900;color:var(--black);margin-bottom:6px;
+}
+.popup-title em{font-style:italic;color:var(--pink);}
+.popup-sub{font-size:12px;color:var(--muted);margin-bottom:32px;line-height:1.6;}
+.popup-links{display:flex;flex-direction:column;gap:12px;}
+.popup-link{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;border:1.5px solid var(--border);
+  color:var(--black);text-decoration:none;
+  font-size:12px;letter-spacing:0.04em;
+  transition:all 0.2s;
+}
+.popup-link:hover{border-color:var(--black);background:var(--off);}
+.popup-link svg{flex-shrink:0;color:var(--pink);}
+.popup-link-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.popup-link-val{font-weight:700;font-size:12px;}
 
 footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .f-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--yellow);font-style:italic;}
 .f-copy{font-size:11px;color:#888;letter-spacing:0.06em;}
+.f-sub{font-size:11px;color:#888;letter-spacing:0.08em;margin-top:4px;}
 
 /* MOBILE */
 @media(max-width:900px){
@@ -315,7 +357,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');setTimeout(function(){scrollToSection('erfahrung-tl');},400);" data-i18n="nav-exp">Erfahrung</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('downloads');" data-i18n="nav-downloads">Downloads</a></li>
   </ul>
-  <a href="mailto:mozaqqa@gmail.com" class="nav-cta" data-i18n="nav-contact">Kontakt →</a>
+  <button class="nav-cta" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="nav-contact">Kontakt →</button>
 </div>
 </nav>
 
@@ -385,7 +427,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
 
     <div>
       <div class="btns">
-        <a href="mailto:mozaqqa@gmail.com" class="btn-main" data-i18n="btn-cart">In den Warenkorb →</a>
+        <button class="btn-main" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="btn-cart">In den Warenkorb →</button>
         <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
       </div>
       <div class="trust">
@@ -657,7 +699,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   <h2 class="k-title" data-i18n="contact-title">Bereit für das<br><em>Gespräch?</em></h2>
   <p class="k-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
   <div class="k-btns">
-    <a href="mailto:mozaqqa@gmail.com" class="kbm" data-i18n="contact-email">E-Mail schreiben</a>
+    <button class="kbm" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="contact-email">E-Mail schreiben</button>
     <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
   </div>
   <div class="k-details">
@@ -667,12 +709,38 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   </div>
 </div>
 
+
+<div class="popup-overlay" id="kontakt-popup" onclick="closePopup(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('kontakt-popup').classList.remove('open')">✕</button>
+    <div class="popup-title">Bereit für das <em>Gespräch?</em></div>
+    <p class="popup-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
+    <div class="popup-links">
+      <a href="mailto:mozaqqa@gmail.com" class="popup-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        <span class="popup-link-val">E-Mail</span>
+      </a>
+      <a href="tel:015738091683" class="popup-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.35a16 16 0 0 0 5.73 5.73l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 17.42z"/></svg>
+        <span class="popup-link-val">Telefon</span>
+      </a>
+      <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="popup-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <span class="popup-link-val">LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <footer>
-  <div class="f-logo">Toujours Contente</div>
+  <div>
+    <div class="f-logo">Toujours Contente</div>
+    <div class="f-sub">Content Manager · E-Commerce · Köln</div>
+  </div>
   <div class="f-icons">
-    <a href="mailto:mozaqqa@gmail.com" class="f-icon-link" title="mozaqqa@gmail.com"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
-    <a href="tel:015738091683" class="f-icon-link" title="015738091683"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.35a16 16 0 0 0 5.73 5.73l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 17.42z"/></svg></a>
-    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="f-icon-link" title="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="mailto:mozaqqa@gmail.com" class="f-icon-link" title="mozaqqa@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+    <a href="tel:015738091683" class="f-icon-link" title="015738091683"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.35a16 16 0 0 0 5.73 5.73l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 17.42z"/></svg></a>
+    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="f-icon-link" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
   </div>
 </footer>
 
@@ -853,6 +921,16 @@ const T = {
 };
 
 let currentLang = 'de';
+
+function closePopup(e) {
+  if (e.target === document.getElementById('kontakt-popup')) {
+    document.getElementById('kontakt-popup').classList.remove('open');
+  }
+}
+// Close popup on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('kontakt-popup').classList.remove('open');
+});
 
 function updateAvailDate(lang) {
   const t = T[lang];
