@@ -102,13 +102,13 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 
 /* COLLAGE STRIP */
 .collage-strip{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-bottom:1.5px solid var(--black);min-height:320px;}
-.c-cell{padding:30px 32px;border-right:1px solid var(--black);display:flex;flex-direction:column;justify-content:center;}
+.c-cell{padding:30px 32px;border-right:1px solid var(--black);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
 .c-cell:nth-child(2){border-right:none;}.c-cell:nth-child(3){border-top:1px solid var(--black);}.c-cell:nth-child(4){border-top:1px solid var(--black);border-right:none;}
 .c-cell.yellow{background:var(--yellow);}
 .c-cell.pink{background:var(--pink);}
 .c-cell.dark{background:var(--black);}
-.c-big{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:900;line-height:1;letter-spacing:-0.02em;color:var(--black);}
-.c-sub{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+.c-big{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:900;line-height:1;letter-spacing:-0.02em;color:var(--black);text-align:center;}
+.c-sub{display:none;}
 .c-stat{font-family:'Unbounded',sans-serif;font-size:38px;font-weight:900;color:var(--black);line-height:1;}
 .c-stat.light{color:var(--yellow);}
 .c-stat-sub{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-top:7px;line-height:1.5;}
@@ -335,7 +335,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
         <span class="stars-link" onclick="switchTab('reviews');scrollToSection('tabs-anchor');" data-i18n="stars-link">6 verifizierte Zeugnisse ↓</span>
       </div>
-      <div class="sku" data-i18n="sku">SKU: MZ-CON-2024 · Stack: Storyblok + Pimcore</div>
+      <div class="sku" id="sku-text">SKU: MZ-CON-2024 · Stack: Storyblok + Pimcore</div>
 
       <div class="hr"></div>
 
@@ -365,11 +365,11 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
       </div>
 
       <div class="hl-list">
-        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl1">Storyblok + Pimcore: produktiv im Einsatz, nicht nur theoretisch</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl2">UX-Zertifikat 2026: denkt in Customer Journey, nicht nur Content</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl3">MA 1,5: analytisch stark, schnelle Einarbeitung in neue Themen</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl4">E-Commerce, Tourismus, Media: branchenübergreifend einsetzbar</span></div>
-        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl5">Schreibqualität auf CEO-Level bestätigt: international, mehrsprachig</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl1">Storyblok & Pimcore produktiv eingesetzt</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl2">SEO-Content mit Ranking- und Conversion-Fokus</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl3">UX-zertifiziert und content-getrieben</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl4">Deutsch & Englisch auf Muttersprachenniveau</span></div>
+        <div class="hl-row"><span class="hl-n">★</span><span data-i18n="hl5">KI-gestützte Automatisierung von Workflows</span></div>
       </div>
     </div>
 
@@ -393,8 +393,8 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <div class="c-sub" data-i18n="collage-sub">Produktdaten · SEO · Strategie · UX · Redaktion</div>
   </div>
   <div class="c-cell pink">
-    <div class="c-stat">3×</div>
-    <div class="c-stat-sub dark-text" data-i18n="collage-3x">Sprachen auf Produktionsniveau</div>
+    <div class="c-stat">3</div>
+    <div class="c-stat-sub dark-text" data-i18n="collage-3x">Gesprochene Sprachen</div>
   </div>
   <div class="c-cell dark">
     <div class="c-stat light">1,5</div>
@@ -422,7 +422,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   <div id="ueber"></div>
     <div class="desc-single">
       <h3 data-i18n="desc-title">Über dieses Produkt</h3>
-      <p data-i18n="desc-p1">Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — produktiv, nicht nur theoretisch. Sie pflegt Produktdaten in Storyblok und Pimcore, erstellt SEO-optimierten Content für Shop, Website und Blog, und denkt in Redaktionsplänen. Als zertifizierter Usability Manager denkt sie in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung.</p>
+      <p data-i18n="desc-p1">Content- und E-Commerce-Spezialistin mit Erfahrung in Storyblok und Pimcore. SEO-Content, Produktdatenpflege, Content-Strategie und Redaktionsplanung aus einer Hand. UX-zertifiziert, mehrsprachig und versiert im Einsatz moderner KI- und Automatisierungslösungen.</p>
       <p data-i18n="desc-p2">Den gesamten E-Commerce-Content-Stack aus einer Hand: Produktdatenpflege im PIM, SEO-Texte, Content-Strategie und Redaktionsplanung — ohne Einarbeitungszeit bei Storyblok oder Pimcore. Drei Sprachen sofort einsatzbereit. Akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).</p>
     </div>
 
@@ -461,7 +461,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     </div>
 
     <div class="tl-item">
-      <div><div class="tl-date" data-i18n="tl4-date">ca. 2023 · 8 Monate</div></div>
+      <div><div class="tl-date" data-i18n="tl4-date">März – Oktober 2023</div></div>
       <div>
         <div class="tl-role" data-i18n="tl4-role">Freelance Content Writer / Media Analyst</div>
         <div class="tl-co">Media Matters International LTD · Remote</div>
@@ -499,7 +499,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
       <div>
         <div class="tl-role" data-i18n="edu2-role">Bachelor of Arts — English Studies</div>
         <div class="tl-co">Rheinische Friedrich-Wilhelms-Universität Bonn</div>
-        <div class="tl-desc" data-i18n="edu2-desc">Note 2,3. Abschlussarbeit: <em>Charlotte Perkins Gilmans Herland — Feminist Utopian Reversal of Gender Hierarchies.</em></div>
+        <div class="tl-desc" data-i18n="edu2-desc">Gesamtnote 2,3 (gut). Abschlussarbeit: <em>Charlotte Perkins Gilman's Herland and the Feminist Utopian Reversal of Gender Hierarchies.</em></div>
         <div class="tl-tags"><span class="tl-tag yl">Note 2,3</span><span class="tl-tag" data-i18n="tag-linguistics">Linguistik</span><span class="tl-tag" data-i18n="tag-literature">Literaturwissenschaft</span></div>
       </div>
     </div>
@@ -674,32 +674,32 @@ const T = {
     'eyebrow':'Content Manager · E-Commerce · Köln / Remote',
     'hero-sub':'Vielseitig. Präzise. Dreisprachig.',
     'stars-link':'6 verifizierte Zeugnisse ↓',
-    'sku':'SKU: MZ-CON-2024 · Stack: Storyblok + Pimcore',
+    'sku':'SKU: MZ-CON-' + new Date().getFullYear() + ' · Stack: Storyblok + Pimcore',
     'avail-sub':'— Köln & remote',
     'lang-label':'Sprache:','lang-de':'Deutsch','lang-en':'Englisch','lang-ar':'Arabisch',
     'area-label':'Einsatzbereich:',
     'area-1':'E-Commerce','area-2':'Content Strategy','area-3':'SEO','area-4':'Online Marketing',
-    'hl1':'Storyblok + Pimcore: produktiv im Einsatz, nicht nur theoretisch',
-    'hl2':'UX-Zertifikat 2026: denkt in Customer Journey, nicht nur Content',
-    'hl3':'MA 1,5: analytisch stark, schnelle Einarbeitung in neue Themen',
-    'hl4':'E-Commerce, Tourismus, Media: branchenübergreifend einsetzbar',
-    'hl5':'Schreibqualität auf CEO-Level bestätigt: international, mehrsprachig',
+    'hl1':'Storyblok & Pimcore produktiv eingesetzt',
+    'hl2':'SEO-Content mit Ranking- und Conversion-Fokus',
+    'hl3':'UX-zertifiziert und content-getrieben',
+    'hl4':'Deutsch & Englisch auf Muttersprachenniveau',
+    'hl5':'KI-gestützte Automatisierung von Workflows',
     'btn-cart':'In den Warenkorb →','btn-wishlist':'Auf die Merkliste',
     'trust1':'Vollständige Unterlagen','trust2':'','trust3':'Bereit für langfristige Zusammenarbeit',
     'collage-big':'Qualität,<br>die','collage-all':'überzeugt.','collage-sub':'Produktdaten · SEO · Strategie · UX · Redaktion',
-    'collage-3x':'Sprachen auf Produktionsniveau','collage-15':'MA-Note Universität Köln','collage-6':'Zeugnisse & Empfehlungen',
+    'collage-3x':'Gesprochene Sprachen','collage-15':'MA-Note Universität Köln','collage-6':'Zeugnisse & Empfehlungen',
     'tab-desc':'Beschreibung','tab-specs':'Technische Daten','tab-reviews':'Kundenbewertungen (6)','tab-downloads':'Downloads','dl-title':'Downloads','dl-sub':'Alle Unterlagen als PDF zum direkten Download.','dl-cv':'Lebenslauf','dl-ref':'Referenzen & Zertifikate',
     'desc-title':'Über dieses Produkt',
-    'desc-p1':'Mona Zaqqa verbindet redaktionelle Präzision mit dem technischen Verständnis moderner E-Commerce-Stacks — produktiv, nicht nur theoretisch. Sie pflegt Produktdaten in Storyblok und Pimcore, erstellt SEO-optimierten Content für Shop, Website und Blog, und denkt in Redaktionsplänen. Als zertifizierter Usability Manager denkt sie in Nutzerführung und Customer Journey — aus jedem Text entsteht eine Erfahrung.',
+    'desc-p1':'Content- und E-Commerce-Spezialistin mit Erfahrung in Storyblok und Pimcore. SEO-Content, Produktdatenpflege, Content-Strategie und Redaktionsplanung aus einer Hand. UX-zertifiziert, mehrsprachig und versiert im Einsatz moderner KI- und Automatisierungslösungen.',
     'desc-p2':'Den gesamten E-Commerce-Content-Stack aus einer Hand: Produktdatenpflege im PIM, SEO-Texte, Content-Strategie und Redaktionsplanung — ohne Einarbeitungszeit bei Storyblok oder Pimcore. Drei Sprachen sofort einsatzbereit. Akademisch geschulter Blick für Struktur und Qualität (MA, Note 1,5).',
     'tl-exp':'Berufserfahrung','tl-edu':'Ausbildung',
     'tl1-date':'Dez. 2024 – heute','tl1-role':'Content Manager (E-Commerce)','tl1-desc':'Produktdatenpflege in Storyblok (CMS) und Pimcore (PIM/DAM). SEO-optimierte Inhalte für Shop, Website, medizinische Ratgeber und Blog. Content-Strategie, Redaktionsplanung, Asset-Management und Qualitätssicherung.',
     'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Redaktion Online-Reisemagazin, Newsletter und Social-Media-Kanäle. Performance Marketing, SEO, Mediaplanung und Kooperationen. Planung und Durchführung von Messen und Events.','tl2-quote':'„Frau Zaqqa verfügt über sehr gute Fachkenntnisse und setzte diese jederzeit zielgerichtet und ergebnisorientiert ein. Dabei erreichte sie stets und übertraf oft die selbst gesetzten sowie vereinbarten Ziele."',
     'tl3-date':'Feb. – Apr. 2024','tl3-role':'Praktikantin Event & Social Media','tl3-desc':'Social-Media-Content, Reels und Pressetexte. Konzeption und Umsetzung von Branding-Maßnahmen für Instagram. Veranstaltungsbegleitung.','tl3-quote':'„In die vielfältigen neuen Arbeitsbereiche hat sie sich schnell eingearbeitet und diese jederzeit sehr gewissenhaft, selbständig und zuverlässig erledigt."',
-    'tl4-date':'ca. 2023 · 8 Monate','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary Writing für internationale Kunden auf Englisch und Deutsch. Branchenübergreifend, internationale Zusammenarbeit.','tl4-quote':'"She has proven herself to be a very capable writer, reliable in the position of standby writer, adapting fast to each project\'s requirements — a real asset to the projects."',
+    'tl4-date':'März – Oktober 2023','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary Writing für internationale Kunden auf Englisch und Deutsch. Branchenübergreifend, internationale Zusammenarbeit.','tl4-quote':'"She has proven herself to be a very capable writer, reliable in the position of standby writer, adapting fast to each project\'s requirements — a real asset to the projects."',
     'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Mitarbeiterin & Schichtleitung','tl5-desc':'Teamleitung bis 6 Personen, Kassenführung, Sonderveranstaltungen. Parallel zum Studium.','tl5-quote':'„Ihre Arbeitsergebnisse waren auch unter schwierigen Bedingungen, Zeitdruck und bei wechselnden Anforderungen von sehr guter Qualität. Frau Zaqqa wurde wegen ihres Engagements stets sehr geschätzt."',
     'edu1-role':'Master of Arts — North American Studies','edu1-desc':'Gesamtnote 1,5 (sehr gut). Abschlussarbeit: The Horror Within — A Critique of White Liberalism in Jordan Peele\'s Get Out.',
-    'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'Note 2,3. Abschlussarbeit: Charlotte Perkins Gilmans Herland — Feminist Utopian Reversal of Gender Hierarchies.',
+    'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'Gesamtnote 2,3 (gut). Abschlussarbeit: Charlotte Perkins Gilman\'s Herland and the Feminist Utopian Reversal of Gender Hierarchies.',
     'tag-contentstrategy':'Content-Strategie','tag-redaktion':'Redaktionsplanung','tag-magazine':'Online-Magazin','tag-events':'Events','tag-press':'Pressetexte','tag-writing':'Summary Writing','tag-media':'Medienanalyse','tag-team':'Teamleitung','tag-events2':'Veranstaltungen','tag-cultural':'Kulturwissenschaft','tag-mediaanalysis':'Medienanalyse','tag-linguistics':'Linguistik','tag-literature':'Literaturwissenschaft',
     'spec-cms':'CMS / PIM / Shops','spec-content':'Content & Marketing','spec-design':'Design & Tools','spec-lang':'Sprachen',
     'badge-prod':'Produktiv ✓','badge-exp':'Erfahrung','badge-basic':'Grundkenntnisse','badge-indep':'Eigenständig','badge-prod2':'Produktiv','badge-cert':'Zertifiziert ✓','badge-native':'Fließend','badge-negotiation':'Verhandlungssicher','cert-canva':'Zertifiziert 2024',
@@ -731,32 +731,32 @@ const T = {
     'eyebrow':'Content Manager · E-Commerce · Cologne / Remote',
     'hero-sub':'Versatile. Precise. Trilingual.',
     'stars-link':'6 verified references ↓',
-    'sku':'SKU: MZ-CON-2024 · Stack: Storyblok + Pimcore',
+    'sku':'SKU: MZ-CON-' + new Date().getFullYear() + ' · Stack: Storyblok + Pimcore',
     'avail-sub':'— Cologne & remote',
     'lang-label':'Language:','lang-de':'German','lang-en':'English','lang-ar':'Arabic',
     'area-label':'Area of expertise:',
     'area-1':'E-Commerce','area-2':'Content Strategy','area-3':'SEO','area-4':'Online Marketing',
-    'hl1':'Storyblok + Pimcore: actively used in production, not just theory',
-    'hl2':'UX Certificate 2026: thinks in customer journey, not just content',
-    'hl3':'MA grade 1.5 (A): analytically strong, quick learner',
-    'hl4':'E-Commerce, Tourism, Media: cross-industry experience',
-    'hl5':'Writing quality confirmed at CEO level: international, multilingual',
+    'hl1':'Storyblok & Pimcore used in production',
+    'hl2':'SEO content with ranking and conversion focus',
+    'hl3':'UX-certified and content-driven',
+    'hl4':'German & English at native speaker level',
+    'hl5':'AI-supported workflow automation',
     'btn-cart':'Add to Cart →','btn-wishlist':'Add to Wishlist',
     'trust1':'Full documentation available','trust2':'','trust3':'Open to long-term collaboration',
     'collage-big':'Quality you<br>can','collage-all':'count on.','collage-sub':'Product Data · SEO · Strategy · UX · Editorial',
-    'collage-3x':'Languages at production level','collage-15':'MA grade · University of Cologne','collage-6':'References & Recommendations',
+    'collage-3x':'Spoken Languages','collage-15':'MA grade · University of Cologne','collage-6':'References & Recommendations',
     'tab-desc':'Description','tab-specs':'Specifications','tab-reviews':'Customer Reviews (6)','tab-downloads':'Downloads','dl-title':'Downloads','dl-sub':'All documents available as PDF for direct download.','dl-cv':'CV / Resume','dl-ref':'References & Certificates',
     'desc-title':'About this Product',
-    'desc-p1':'Mona Zaqqa combines editorial precision with a hands-on understanding of modern e-commerce stacks — in practice, not just in theory. She manages product data in Storyblok and Pimcore, creates SEO-optimised content for shops, websites and blogs, and thinks in editorial plans. As a certified Usability Manager, she consistently focuses on user guidance and customer journey — every piece of content becomes an experience.',
+    'desc-p1':'Content and e-commerce specialist with hands-on experience in Storyblok and Pimcore. SEO content, product data management, content strategy and editorial planning — all in one. UX-certified, multilingual and proficient in modern AI and automation solutions.',
     'desc-p2':'The complete e-commerce content stack in one person: product data management in PIM, SEO copy, content strategy and editorial planning — no onboarding time needed for Storyblok or Pimcore. Three languages ready to go. Academically trained eye for structure and quality (MA, grade 1.5).',
     'tl-exp':'Work Experience','tl-edu':'Education',
     'tl1-date':'Dec. 2024 – present','tl1-role':'Content Manager (E-Commerce)','tl1-desc':'Product data management in Storyblok (CMS) and Pimcore (PIM/DAM). SEO-optimised content for shop, website, medical guides and blog. Content strategy, editorial planning, asset management and quality assurance.',
     'tl2-date':'Jun. – Nov. 2024','tl2-role':'Assistant Marketing Manager','tl2-desc':'Editorial work for online travel magazine, newsletter and social media channels. Performance marketing, SEO, media planning and partnerships. Planning and execution of trade fairs and events.','tl2-quote':'"She demonstrated excellent expertise and applied it purposefully at all times. She consistently achieved and often exceeded her targets."',
     'tl3-date':'Feb. – Apr. 2024','tl3-role':'Intern Event & Social Media','tl3-desc':'Social media content, Reels and press texts. Conception and implementation of branding measures for Instagram. Event support.','tl3-quote':'"She quickly familiarised herself with diverse new areas of responsibility and completed all tasks conscientiously, independently and reliably at all times."',
-    'tl4-date':'approx. 2023 · 8 months','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary writing for international clients in English and German. Cross-industry, international collaboration.','tl4-quote':'"Very capable writer — real asset."',
+    'tl4-date':'March – October 2023','tl4-role':'Freelance Content Writer / Media Analyst','tl4-desc':'Summary writing for international clients in English and German. Cross-industry, international collaboration.','tl4-quote':'"Very capable writer — real asset."',
     'tl5-date':'Apr. 2017 – Jan. 2022','tl5-role':'Team Member & Shift Leader','tl5-desc':'Team management up to 6 people, cash management, special events. Alongside studies.','tl5-quote':'"Her work results were of very high quality even under difficult conditions, time pressure and changing requirements. She was greatly appreciated for her commitment."',
     'edu1-role':'Master of Arts — North American Studies','edu1-desc':'GPA 1.5 (A, with distinction). Thesis: The Horror Within — A Critique of White Liberalism in Jordan Peele\'s Get Out.',
-    'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'GPA 2.3 (B). Thesis: Charlotte Perkins Gilman\'s Herland — Feminist Utopian Reversal of Gender Hierarchies.',
+    'edu2-role':'Bachelor of Arts — English Studies','edu2-desc':'Gesamtnote 2,3 (gut). Thesis: Charlotte Perkins Gilman\'s Herland and the Feminist Utopian Reversal of Gender Hierarchies.',
     'tag-contentstrategy':'Content Strategy','tag-redaktion':'Editorial Planning','tag-magazine':'Online Magazine','tag-events':'Events','tag-press':'Press Texts','tag-writing':'Summary Writing','tag-media':'Media Analysis','tag-team':'Team Leadership','tag-events2':'Events','tag-cultural':'Cultural Studies','tag-mediaanalysis':'Media Analysis','tag-linguistics':'Linguistics','tag-literature':'Literary Studies',
     'spec-cms':'CMS / PIM / Shops','spec-content':'Content & Marketing','spec-design':'Design & Tools','spec-lang':'Languages',
     'badge-prod':'Active ✓','badge-exp':'Experience','badge-basic':'Basic knowledge','badge-indep':'Independent','badge-prod2':'Active','badge-cert':'Certified ✓','badge-native':'Fluent','badge-negotiation':'Negotiation level','cert-canva':'Certified 2024',
@@ -788,32 +788,32 @@ const T = {
     'eyebrow':'مدير محتوى · تجارة إلكترونية · كولونيا / عن بُعد',
     'hero-sub':'متعددة المواهب. دقيقة. ثلاثية اللغات.',
     'stars-link':'٦ شهادات موثقة ↓',
-    'sku':'الرمز: MZ-CON-2024 · النظام: Storyblok + Pimcore',
+    'sku':'الرمز: MZ-CON-' + new Date().getFullYear() + ' · النظام: Storyblok + Pimcore',
     'avail-sub':'— كولونيا وعن بُعد',
     'lang-label':'اللغة:','lang-de':'الألمانية','lang-en':'الإنجليزية','lang-ar':'العربية',
     'area-label':'مجال العمل:',
     'area-1':'التجارة الإلكترونية','area-2':'استراتيجية المحتوى','area-3':'SEO','area-4':'التسويق الرقمي',
-    'hl1':'Storyblok + Pimcore: مستخدمَين فعلياً، مش بس نظري',
-    'hl2':'شهادة UX 2026: تفكر بـ Customer Journey، مش بس المحتوى',
-    'hl3':'ماجستير بتقدير ١٫٥: تحليلية قوية، تتعلم المواضيع الجديدة بسرعة',
-    'hl4':'تجارة إلكترونية، سياحة، إعلام: خبرة في قطاعات متعددة',
-    'hl5':'جودة كتابة مؤكدة على مستوى CEO: دولية ومتعددة اللغات',
+    'hl1':'Storyblok & Pimcore مستخدمَين فعلياً في الإنتاج',
+    'hl2':'محتوى SEO مع تركيز على الترتيب والتحويل',
+    'hl3':'معتمدة في UX ومدفوعة بالمحتوى',
+    'hl4':'الألمانية والإنجليزية على مستوى اللغة الأم',
+    'hl5':'أتمتة سير العمل بمساعدة الذكاء الاصطناعي',
     'btn-cart':'أضيفيني للسلة ←','btn-wishlist':'أضيفيني للمفضلة',
     'trust1':'وثائق كاملة متوفرة','trust2':'','trust3':'مستعدة للتعاون طويل الأمد',
     'collage-big':'جودة<br>تُقنع','collage-all':'دائماً.','collage-sub':'بيانات المنتجات · SEO · استراتيجية · UX · تحرير',
-    'collage-3x':'لغات على مستوى احترافي','collage-15':'تقدير الماجستير · جامعة كولونيا','collage-6':'شهادات وتوصيات',
+    'collage-3x':'لغات منطوقة','collage-15':'تقدير الماجستير · جامعة كولونيا','collage-6':'شهادات وتوصيات',
     'tab-desc':'الوصف','tab-specs':'المواصفات التقنية','tab-reviews':'تقييمات العملاء (٦)','tab-downloads':'تنزيلات','dl-title':'تنزيلات','dl-sub':'جميع الوثائق متاحة كـ PDF للتنزيل المباشر.','dl-cv':'السيرة الذاتية','dl-ref':'المراجع والشهادات',
     'desc-title':'عن هاد المنتج',
-    'desc-p1':'منى زقة بتجمع الدقة التحريرية مع الفهم التقني لأنظمة التجارة الإلكترونية الحديثة — وهاد مش بس نظري، هاد شغل فعلي. هي بتشتغل على بيانات المنتجات في Storyblok وPimcore، وبتكتب محتوى محسّن لمحركات البحث للمتجر والموقع والمدونة. كمدير Usability معتمد، هي دايماً بتفكر بـ Customer Journey — كل نص بيصير تجربة.',
+    'desc-p1':'متخصصة في المحتوى والتجارة الإلكترونية مع خبرة عملية في Storyblok وPimcore. محتوى SEO، إدارة بيانات المنتجات، استراتيجية المحتوى والتخطيط التحريري — كلها بإيد واحدة. معتمدة في UX، متعددة اللغات وخبيرة في حلول الذكاء الاصطناعي والأتمتة الحديثة.',
     'desc-p2':'المنظومة الكاملة لمحتوى التجارة الإلكترونية بإيد واحدة: إدارة بيانات المنتجات في PIM، نصوص SEO، استراتيجية المحتوى والتخطيط التحريري — وما في حاجة لفترة تدريب على Storyblok أو Pimcore. ثلاث لغات جاهزة على طول. نظرة أكاديمية للهيكلة والجودة (ماجستير، تقدير ١٫٥).',
     'tl-exp':'الخبرة المهنية','tl-edu':'التعليم',
     'tl1-date':'ديسمبر ٢٠٢٤ – الحين','tl1-role':'مدير محتوى (تجارة إلكترونية)','tl1-desc':'إدارة بيانات المنتجات في Storyblok وPimcore. محتوى محسّن لـ SEO للمتجر والموقع والأدلة الطبية والمدونة. استراتيجية المحتوى، التخطيط التحريري، إدارة الأصول وضبط الجودة.',
     'tl2-date':'يونيو – نوفمبر ٢٠٢٤','tl2-role':'مساعدة مدير تسويق','tl2-desc':'تحرير مجلة السفر الإلكترونية، النشرة الإخبارية وقنوات التواصل الاجتماعي. التسويق الأداتي، SEO، تخطيط الإعلام والشراكات. تنظيم ومتابعة المعارض والفعاليات.','tl2-quote':'«أظهرت خبرة ممتازة وطبّقتها بشكل هادف في كل وقت. وصلت دايماً لأهدافها وكتير أحيان تجاوزتها.»',
     'tl3-date':'فبراير – أبريل ٢٠٢٤','tl3-role':'متدربة فعاليات وسوشيال ميديا','tl3-desc':'محتوى سوشيال ميديا، Reels ونصوص صحفية. تصميم وتطبيق مبادرات العلامة التجارية على إنستقرام. مرافقة الفعاليات.','tl3-quote':'«اندمجت بسرعة في المجالات الجديدة وأنجزت كل المهام بدقة واستقلالية وموثوقية عالية.»',
-    'tl4-date':'تقريباً ٢٠٢٣ · ٨ أشهر','tl4-role':'كاتبة محتوى حرة / محللة إعلامية','tl4-desc':'كتابة ملخصات لعملاء دوليين بالإنجليزية والألمانية. خبرة في قطاعات متعددة وتعاون دولي.','tl4-quote':'«كاتبة قادرة جداً — إضافة حقيقية للمشاريع.»',
+    'tl4-date':'مارس – أكتوبر ٢٠٢٣','tl4-role':'كاتبة محتوى حرة / محللة إعلامية','tl4-desc':'كتابة ملخصات لعملاء دوليين بالإنجليزية والألمانية. خبرة في قطاعات متعددة وتعاون دولي.','tl4-quote':'«كاتبة قادرة جداً — إضافة حقيقية للمشاريع.»',
     'tl5-date':'أبريل ٢٠١٧ – يناير ٢٠٢٢','tl5-role':'موظفة ومشرفة وردية','tl5-desc':'إدارة فريق حتى ٦ أشخاص، إدارة الصندوق، فعاليات خاصة. بالتوازي مع الدراسة.','tl5-quote':'«كانت نتائج عملها عالية الجودة حتى في الظروف الصعبة وتحت ضغط الوقت. قدّرناها كتير بسبب التزامها.»',
     'edu1-role':'ماجستير آداب — دراسات أمريكا الشمالية','edu1-desc':'تقدير ١٫٥ (ممتاز). أطروحة: The Horror Within — نقد الليبرالية البيضاء في فيلم Get Out لجوردان بيل.',
-    'edu2-role':'بكالوريوس آداب — دراسات اللغة الإنجليزية','edu2-desc':'تقدير ٢٫٣. أطروحة: Herland لشارلوت بيركنز جيلمان — عكس هرمية الجنسين في اليوتوبيا النسوية.',
+    'edu2-role':'بكالوريوس آداب — دراسات اللغة الإنجليزية','edu2-desc':'الدرجة الكلية ٢٫٣ (جيد). أطروحة: Charlotte Perkins Gilman\'s Herland and the Feminist Utopian Reversal of Gender Hierarchies.',
     'tag-contentstrategy':'استراتيجية المحتوى','tag-redaktion':'التخطيط التحريري','tag-magazine':'مجلة إلكترونية','tag-events':'فعاليات','tag-press':'نصوص صحفية','tag-writing':'كتابة ملخصات','tag-media':'تحليل إعلامي','tag-team':'قيادة الفريق','tag-events2':'فعاليات','tag-cultural':'علوم ثقافية','tag-mediaanalysis':'تحليل إعلامي','tag-linguistics':'لغويات','tag-literature':'أدب',
     'spec-cms':'نظام إدارة المحتوى / PIM / متاجر','spec-content':'محتوى وتسويق','spec-design':'تصميم وأدوات','spec-lang':'اللغات',
     'badge-prod':'نشط ✓','badge-exp':'خبرة','badge-basic':'معرفة أساسية','badge-indep':'مستقلة','badge-prod2':'نشط','badge-cert':'معتمدة ✓','badge-native':'طلاقة','badge-negotiation':'مستوى تفاوضي','cert-canva':'معتمدة ٢٠٢٤',
@@ -895,6 +895,8 @@ function setLang(lang) {
 
 // Init date on load
 updateAvailDate('de');
+// Auto-year SKU
+(function(){var el=document.getElementById('sku-text');if(el)el.textContent='SKU: MZ-CON-'+new Date().getFullYear()+' · Stack: Storyblok + Pimcore';})();
 
 // Offset-aware scroll
 function getOffset() {
@@ -934,12 +936,15 @@ function switchTab(name) {
     document.getElementById('tab-'+n).classList.toggle('on', n===name);
     document.getElementById('btn-'+n).classList.toggle('on', n===name);
   });
-  // Scroll to top of tabs when switching
+  // Scroll so tab content is visible below both sticky menus
   const tabsAnchor = document.getElementById('tabs-anchor');
-  if (tabsAnchor) {
+  const tabsOuter = document.querySelector('.tabs-outer');
+  if (tabsOuter) {
     const nav = document.querySelector('nav');
+    const tabs = document.querySelector('.tabs-sticky');
     const navH = nav ? nav.getBoundingClientRect().height : 0;
-    const top = tabsAnchor.getBoundingClientRect().top + window.scrollY - navH - 8;
+    const tabsH = tabs ? tabs.getBoundingClientRect().height : 0;
+    const top = tabsOuter.getBoundingClientRect().top + window.scrollY - navH - tabsH - 16;
     window.scrollTo({ top, behavior: 'smooth' });
   }
 }
