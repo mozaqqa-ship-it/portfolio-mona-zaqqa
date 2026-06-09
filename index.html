@@ -238,9 +238,9 @@ body.rtl .avail-row{flex-direction:row-reverse;}
 .tb-icon{color:#b0a8a8;display:flex;align-items:center;transition:color 0.2s;}
 .tb-icon:hover{color:var(--pink);}
 .f-icons{display:flex;gap:8px;align-items:center;}
-.f-icon-link{color:#888;display:flex;align-items:center;justify-content:center;padding:10px;transition:color 0.2s, background 0.2s;border-radius:4px;}
+.f-icon-link{color:var(--yellow);display:flex;align-items:center;justify-content:center;padding:10px;transition:color 0.2s, background 0.2s;border-radius:4px;}
 .f-icon-link svg, .tb-icon svg, .popup-link svg {pointer-events:none;}
-.f-icon-link:hover{color:var(--pink);background:rgba(255,255,255,0.08);}
+.f-icon-link:hover{color:var(--pink);background:rgba(255,255,255,0.06);}
 
 
 /* KONTAKT POPUP */
@@ -337,10 +337,6 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <span class="mobile-hide" data-i18n="topbar-location">Köln / Remote</span>
   </div>
   <div class="top-bar-right">
-    <a href="mailto:mozaqqa@gmail.com" class="tb-icon" title="E-Mail"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
-    <a href="tel:015738091683" class="tb-icon mobile-hide" title="Telefon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.35a16 16 0 0 0 5.73 5.73l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 17.42z"/></svg></a>
-    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="tb-icon mobile-hide" title="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-    <span class="lang-sep">·</span>
     <button class="lang-btn active" onclick="setLang('de')">DE</button>
     <span class="lang-sep">·</span>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -427,7 +423,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
 
     <div>
       <div class="btns">
-        <button class="btn-main" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="btn-cart">In den Warenkorb →</button>
+        <a href="mailto:mozaqqa@gmail.com" class="btn-main" data-i18n="btn-cart">In den Warenkorb →</a>
         <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
       </div>
       <div class="trust">
@@ -699,7 +695,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   <h2 class="k-title" data-i18n="contact-title">Bereit für das<br><em>Gespräch?</em></h2>
   <p class="k-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
   <div class="k-btns">
-    <button class="kbm" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="contact-email">E-Mail schreiben</button>
+    <a href="mailto:mozaqqa@gmail.com" class="kbm" data-i18n="contact-email">E-Mail schreiben</a>
     <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
   </div>
   <div class="k-details">
