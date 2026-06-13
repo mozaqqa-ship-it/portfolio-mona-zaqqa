@@ -364,7 +364,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <li><a href="javascript:void(0)" onclick="switchTab('desc');scrollToSection('tabs-anchor');setTimeout(function(){scrollToSection('erfahrung-tl');},400);" data-i18n="nav-exp">Erfahrung</a></li>
     <li><a href="javascript:void(0)" onclick="scrollToSection('downloads');" data-i18n="nav-downloads">Downloads</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('kontakt-popup').classList.add('open')" data-i18n="nav-contact">Kontakt →</button>
+  <button class="nav-cta" onclick="document.getElementById('kontakt-popup').classList.add('open');gtag('event','click',{event_category:'Kontakt',event_label:'Nav Kontakt Button'});" data-i18n="nav-contact">Kontakt →</button>
 </div>
 </nav>
 
@@ -434,8 +434,8 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
 
     <div>
       <div class="btns">
-        <a href="mailto:mozaqqa@gmail.com" class="btn-main" data-i18n="btn-cart">In den Warenkorb →</a>
-        <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="btn-out" data-i18n="btn-wishlist">Auf die Merkliste</a>
+        <a href="mailto:mozaqqa@gmail.com" class="btn-main" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'E-Mail Warenkorb'});" data-i18n="btn-cart">In den Warenkorb →</a>
+        <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="btn-out" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'LinkedIn Merkliste'});" data-i18n="btn-wishlist">Auf die Merkliste</a>
       </div>
       <div class="trust">
         <div class="trust-i"><span class="tchk">✓</span> <span data-i18n="trust1">Vollständige Unterlagen</span></div>
@@ -687,7 +687,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     </div>
     <p class="downloads-sub" data-i18n="dl-sub">Alle Unterlagen als PDF zum direkten Download.</p>
     <div class="dl-grid">
-      <a href="Lebenslauf_Mona_Zaqqa.pdf" download class="dl-card">
+      <a href="Lebenslauf_Mona_Zaqqa.pdf" download class="dl-card" onclick="gtag('event','download',{event_category:'CV',event_label:'Lebenslauf_Mona_Zaqqa.pdf'});">
         <div class="dl-icon">↓</div>
         <div class="dl-name" data-i18n="dl-cv">Lebenslauf</div>
         <div class="dl-meta">PDF · 112 KB</div>
@@ -705,8 +705,8 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   <h2 class="k-title" data-i18n="contact-title">Bereit für das<br><em>Gespräch?</em></h2>
   <p class="k-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
   <div class="k-btns">
-    <a href="mailto:mozaqqa@gmail.com" class="kbm" data-i18n="contact-email">E-Mail schreiben</a>
-    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="kbo" data-i18n="contact-linkedin">LinkedIn öffnen</a>
+    <a href="mailto:mozaqqa@gmail.com" class="kbm" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'E-Mail Kontakt-Sektion'});" data-i18n="contact-email">E-Mail schreiben</a>
+    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="kbo" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'LinkedIn Kontakt-Sektion'});" data-i18n="contact-linkedin">LinkedIn öffnen</a>
   </div>
 
 </div>
@@ -718,12 +718,12 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <div class="popup-title">Bereit für das <em>Gespräch?</em></div>
     <p class="popup-sub" data-i18n="contact-sub">Unverbindliche Anfrage per Mail — ich antworte innerhalb von 24 Stunden.</p>
     <div class="popup-links">
-      <a href="mailto:mozaqqa@gmail.com" class="popup-link">
+      <a href="mailto:mozaqqa@gmail.com" class="popup-link" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'E-Mail Popup'});">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
         <span class="popup-link-val">E-Mail</span>
       </a>
 
-      <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="popup-link">
+      <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="popup-link" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'LinkedIn Popup'});">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         <span class="popup-link-val">LinkedIn</span>
       </a>
@@ -737,8 +737,8 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
     <div class="f-sub">Content Manager · E-Commerce · Köln</div>
   </div>
   <div class="f-icons">
-    <a href="mailto:mozaqqa@gmail.com" class="f-icon-link" title="mozaqqa@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
-    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="f-icon-link" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="mailto:mozaqqa@gmail.com" class="f-icon-link" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'E-Mail Footer'});" title="mozaqqa@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+    <a href="https://www.linkedin.com/in/mona-zaqqa/" target="_blank" rel="noopener noreferrer" class="f-icon-link" onclick="gtag('event','click',{event_category:'Kontakt',event_label:'LinkedIn Footer'});" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
   </div>
 </footer>
 
@@ -943,6 +943,7 @@ function updateAvailDate(lang) {
 }
 
 function setLang(lang) {
+  gtag('event', 'language_switch', {event_category: 'UX', event_label: lang});
   currentLang = lang;
   const t = T[lang];
 
@@ -1022,6 +1023,7 @@ function scrollToSection(id) {
 })();
 
 function switchTab(name) {
+  gtag('event', 'tab_view', {event_category: 'Navigation', event_label: name});
   ['desc','specs','reviews'].forEach(n => {
     document.getElementById('tab-'+n).classList.toggle('on', n===name);
     document.getElementById('btn-'+n).classList.toggle('on', n===name);
