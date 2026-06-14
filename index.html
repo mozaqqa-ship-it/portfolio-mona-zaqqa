@@ -60,7 +60,6 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .sticker:hover{transform:rotate(3deg) scale(1.04);}
 .photo-wrap{position:relative;width:100%;max-width:480px;}
 .photo-wrap img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:6px 6px 0 var(--black);object-fit:contain;}
-.photo-wrap .avail-badge{position:absolute;top:12px;left:12px;z-index:10;background:var(--white);border:1.5px solid var(--black);padding:9px 16px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;box-shadow:2px 2px 0 var(--black);}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;flex-shrink:0;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.5);}}
 
@@ -108,7 +107,7 @@ nav{border-bottom:1.5px solid var(--black);background:var(--white);position:stic
 .c-cell.pink{background:var(--pink);}
 .c-cell.dark{background:var(--black);}
 .c-big{font-family:'Jost',sans-serif;font-size:clamp(28px,3vw,42px);font-weight:900;line-height:1;letter-spacing:-0.02em;color:var(--black);}
-.c-sub{display:none;}
+.c-sub{display:block;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-top:16px;line-height:1.6;}
 .c-stat{font-family:'Unbounded',sans-serif;font-size:38px;font-weight:900;color:var(--black);line-height:1;}
 .c-stat.light{color:var(--yellow);}
 .c-stat-sub{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-top:7px;line-height:1.5;}
@@ -282,8 +281,8 @@ body.rtl .avail-row{flex-direction:row-reverse;}
 .popup-link-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
 .popup-link-val{font-weight:700;font-size:12px;}
 
-footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.f-logo{font-family:'Jost',sans-serif;font-size:18px;color:var(--yellow);font-style:italic;}
+footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:3px solid var(--yellow);}
+.f-logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:15px;color:var(--yellow);text-transform:uppercase;}
 .f-copy{font-size:11px;color:#888;letter-spacing:0.06em;}
 .f-sub{font-size:11px;color:#888;letter-spacing:0.08em;margin-top:4px;}
 
@@ -301,11 +300,10 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   .hero-img{min-height:auto;padding:20px;border-right:none;border-bottom:1.5px solid var(--black);border-radius:0;}
   .photo-wrap{max-width:100%;width:100%;}
   .photo-wrap img{width:100%;height:auto;max-height:none;object-fit:contain;}
-  .avail-badge{padding:6px 12px;font-size:10px;}
-  .avail-badge .pulse-dot{width:6px;height:6px;}
   .hero-right{padding:28px 24px;}
   .collage-strip{grid-template-columns:1fr 1fr;min-height:auto;}
   .c-big{font-size:26px;}
+  .c-sub{font-size:9px;margin-top:10px;letter-spacing:0.04em;}
   .c-stat{font-size:28px;}
   .tabs-sticky{top:48px;}
   .tabs-sticky-inner{padding:0 20px;}
@@ -376,10 +374,6 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
   <div class="hero-img">
     <div class="photo-wrap">
       <img src="foto.jpeg" alt="Mona Zaqqa – Content Managerin und E-Commerce-Spezialistin aus Köln" onerror="this.style.display='none'">
-      <div class="avail-badge">
-        <div class="pulse-dot"></div>
-        <span id="avail-text">Verfügbar ab Oktober 2026</span>
-      </div>
       <div class="sticker" data-i18n="sticker">★★★★★ &nbsp;6 Zeugnisse</div>
     </div>
   </div>
@@ -492,7 +486,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="tl-role" data-i18n="tl1-role">Content Manager (E-Commerce)</div>
         <div class="tl-co">SaniFuture GmbH & Co. KG · Köln</div>
         <div class="tl-desc" data-i18n="tl1-desc">Produktdatenpflege in Storyblok (CMS) und Pimcore (PIM/DAM). SEO-optimierte Inhalte für Shop, Website, medizinische Ratgeber und Blog. Content-Strategie, Redaktionsplanung, Asset-Management und Qualitätssicherung.</div>
-        <div class="tl-tags"><span class="tl-tag yl">Storyblok</span><span class="tl-tag yl">Pimcore</span><span class="tl-tag">SEO</span><span class="tl-tag" data-i18n="tag-contentstrategy">Content-Strategie</span><span class="tl-tag" data-i18n="tag-redaktion">Redaktionsplanung</span></div>
+        <div class="tl-tags"><span class="tl-tag yl">Storyblok</span><span class="tl-tag yl">Pimcore</span><span class="tl-tag">SEO</span></div>
       </div>
     </div>
 
@@ -503,7 +497,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="tl-co">WORLD INSIGHT Erlebnisreisen GmbH · Köln</div>
         <div class="tl-mini-quote"><p data-i18n="tl2-quote">„Übertraf stets die vereinbarten Ziele."</p><cite>— WORLD INSIGHT, 2024</cite></div>
         <div class="tl-desc" data-i18n="tl2-desc">Redaktion Online-Reisemagazin, Newsletter und Social-Media-Kanäle. Performance Marketing, SEO, Mediaplanung und Kooperationen. Planung und Durchführung von Messen und Events.</div>
-        <div class="tl-tags"><span class="tl-tag pk" data-i18n="tag-magazine">Online-Magazin</span><span class="tl-tag pk">Newsletter</span><span class="tl-tag pk">Social Media</span><span class="tl-tag">SEO</span><span class="tl-tag" data-i18n="tag-events">Events</span></div>
+        <div class="tl-tags"><span class="tl-tag pk" data-i18n="tag-magazine">Online-Magazin</span><span class="tl-tag pk">Newsletter</span><span class="tl-tag">SEO</span></div>
       </div>
     </div>
 
@@ -514,7 +508,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="tl-co">GRENZGANG Veranstaltungen · Köln</div>
         <div class="tl-mini-quote"><p data-i18n="tl3-quote">„Sehr gewissenhaft, selbständig und zuverlässig erledigt."</p><cite>— GRENZGANG, 2024</cite></div>
         <div class="tl-desc" data-i18n="tl3-desc">Social-Media-Content, Reels und Pressetexte. Konzeption und Umsetzung von Branding-Maßnahmen für Instagram. Veranstaltungsbegleitung.</div>
-        <div class="tl-tags"><span class="tl-tag bl">Reels</span><span class="tl-tag bl">Branding</span><span class="tl-tag">Canva</span><span class="tl-tag" data-i18n="tag-press">Pressetexte</span></div>
+        <div class="tl-tags"><span class="tl-tag bl">Reels</span><span class="tl-tag bl">Branding</span><span class="tl-tag">Canva</span></div>
       </div>
     </div>
 
@@ -579,13 +573,13 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="spec-row"><span class="sk" data-i18n="sk-seo">SEO-Content</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-prod">Produktiv ✓</span></span></div>
         <div class="spec-row"><span class="sk" data-i18n="sk-strategy">Content-Strategie</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-prod">Produktiv ✓</span></span></div>
         <div class="spec-row"><span class="sk" data-i18n="sk-editorial">Redaktionsplanung</span><span class="sv" data-i18n="badge-indep">Eigenständig</span></div>
-        <div class="spec-row"><span class="sk" data-i18n="sk-asset">Asset-Management & QS</span><span class="sv" data-i18n="badge-prod2">Produktiv</span></div>
+        <div class="spec-row"><span class="sk" data-i18n="sk-asset">Asset-Management & QS</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-prod">Produktiv ✓</span></span></div>
         <div class="spec-row"><span class="sk" data-i18n="sk-perfmkt">Performance Marketing</span><span class="sv" data-i18n="badge-exp">Erfahrung</span></div>
         <div class="spec-row"><span class="sk" data-i18n="sk-ux">Usability / UX</span><span class="sv"><span class="sbadge sb-p" data-i18n="badge-cert">Zertifiziert ✓</span></span></div>
       </div>
       <div>
         <div class="spec-group-title" data-i18n="spec-design">Design & Tools</div>
-        <div class="spec-row"><span class="sk">Canva</span><span class="sv" data-i18n="cert-canva">Zertifiziert 2024</span></div>
+        <div class="spec-row"><span class="sk">Canva</span><span class="sv"><span class="sbadge sb-p" data-i18n="badge-cert">Zertifiziert ✓</span></span></div>
         <div class="spec-row"><span class="sk">Adobe Photoshop</span><span class="sv" data-i18n="badge-exp">Erfahrung</span></div>
         <div class="spec-row"><span class="sk">Adobe Express</span><span class="sv" data-i18n="badge-exp">Erfahrung</span></div>
         <div class="spec-row"><span class="sk" data-i18n="sk-media">Mediaplanung</span><span class="sv" data-i18n="badge-exp">Erfahrung</span></div>
@@ -594,7 +588,7 @@ footer{background:var(--black);color:var(--white);padding:22px 72px;display:flex
         <div class="spec-group-title" data-i18n="spec-lang">Sprachen</div>
         <div class="spec-row"><span class="sk" data-i18n="lang-de">Deutsch</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-native">Fließend</span></span></div>
         <div class="spec-row"><span class="sk" data-i18n="lang-en">Englisch</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-native">Fließend</span></span></div>
-        <div class="spec-row"><span class="sk" data-i18n="lang-ar">Arabisch</span><span class="sv"><span class="sbadge sb-y" data-i18n="badge-negotiation">Verhandlungssicher</span></span></div>
+        <div class="spec-row"><span class="sk" data-i18n="lang-ar">Arabisch</span><span class="sv"><span class="sbadge sb-g" data-i18n="badge-negotiation">Verhandlungssicher</span></span></div>
       </div>
     </div>
     <div class="cert-section">
@@ -931,7 +925,6 @@ function updateAvailDate(lang) {
   const avail = new Date(now.getFullYear(), now.getMonth() + 4, 1);
   const months = t['avail-prefix-months'];
   const txt = t['avail-prefix'] + ' ' + months[avail.getMonth()] + ' ' + avail.getFullYear();
-  document.getElementById('avail-text').textContent = txt;
   document.getElementById('avail-label').textContent = txt;
   const t2 = document.getElementById('trust2-text');
   if (t2) t2.textContent = txt;
